@@ -9,13 +9,15 @@
 </@layoutTemplate.layout>
 
 <#macro diaryEntry title sessionType date time goal>
-  <div class="panel-box">
+  <div class="diary">
 
-    ${title}<br/>
-    ${sessionType}<br/>
-    Date ${date}<br/>
-    at ${time}<br/>
-    ${goal}<br/>
+    <div class="content">
+      <h3 class="title">${title}</h3><br/>
+      <p class="subtitle">${sessionType}</p><br/>
+      <p>Date <span>${date}</span></p><br/>
+      <p>at <span>${time}</span></p><br/>
+      <p>${goal}</p><br/>
+    </div>
 
   </div>
 </#macro>

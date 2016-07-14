@@ -2,6 +2,7 @@ package com.kainos.discoverydiary.resources;
 
 import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
+import com.kainos.discoverydiary.models.Project;
 import com.kainos.discoverydiary.views.DiaryEntryListView;
 import io.dropwizard.views.View;
 
@@ -24,6 +25,8 @@ public class DiaryResource {
     @Path("list")
     @GET
     public View listDiaryEntries() {
-        return new DiaryEntryListView(dataStore.getEntries());
+        Project project = new Project(1, "Government", "This is a sample project and we do no care about the content of " +
+                "this sentence.");
+        return new DiaryEntryListView(dataStore.getEntries(), project);
     }
 }
