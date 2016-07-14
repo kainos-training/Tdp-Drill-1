@@ -33,12 +33,11 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         final HomeResource homeResource = new HomeResource();
         final PeopleResource peopleResource = new PeopleResource(dataStore, discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(dataStore);
+        final DiaryResource diaryResource = new DiaryResource(dataStore, discoveryDiaryConfiguration);
 
         environment.jersey().register(homeResource);
         environment.jersey().register(peopleResource);
         environment.jersey().register(diaryResource);
-
-        final ProjectResource projectResource = new ProjectResource(new DataStore(), discoveryDiaryConfiguration);
 
         environment.jersey().register(projectResource);
     }

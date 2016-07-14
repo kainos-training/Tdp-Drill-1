@@ -8,11 +8,12 @@ import io.dropwizard.views.View;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 /**
  * Resource file for routing Diary Entry requests
  */
-@Path("diary")
+@Path("project")
 public class DiaryResource {
     final DataStore dataStore;
     final DiscoveryDiaryConfiguration configuration;
@@ -22,11 +23,10 @@ public class DiaryResource {
         this.configuration = configuration;
     }
 
-    @Path("list")
+    @Path("{projectId}/diary")
     @GET
-    public View listDiaryEntries() {
-        Project project = new Project(1, "Government", "This is a sample project and we do no care about the content of " +
-                "this sentence.");
+    public View listDiaryEntries(@PathParam("projectId") int projectId) {
+        Project project = dataStore.getProject(projectId);
         return new DiaryEntryListView(dataStore.getEntries(), project);
     }
 }

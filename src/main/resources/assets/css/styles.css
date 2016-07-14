@@ -9,7 +9,7 @@ a:hover {
   /* header */
 ​
 body {
-  background: #eff3f8;
+  background: #eff3f8 !important;
   font-size: 16px;
   padding-bottom: 80px;
 }
@@ -205,11 +205,7 @@ textarea {
   padding: 15px;
   margin-bottom: 30px;
 }
-​
-.project:nth-last-child(2), .diary:nth-last-child(2) {
-  margin-bottom: 0px;
-}
-​
+​ ​
 .project .content span, .diary .content span {
   font-weight: 500;
 }
