@@ -33,7 +33,7 @@ public class DataStore {
 	static {
 		entries.add(new DiaryEntry(SessionType.VISION, "Diary Entry 1", "18/06/2016", "16:00:00", "Test 1"));
 		entries.add(new DiaryEntry(SessionType.GOALS, "Diary Entry 2",  "21/06/2016", "17:00:00", "Test 2"));
-		entries.add(new DiaryEntry(SessionType.NFRs, "Diary Entry 3", "24/06/2016", "18:00:00", "Test 3"));
+		entries.add(new DiaryEntry(SessionType.NFRs, "Diary Entry 3", "24/06/2016git ", "18:00:00", "Test 3"));
 	}
 
 	public List<DiaryEntry> getEntries() { return entries; }
