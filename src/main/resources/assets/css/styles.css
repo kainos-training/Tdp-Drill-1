@@ -1,19 +1,9 @@
-* {
-  outline: none !important;
-}
-​
-a:hover {
-  text-decoration: none;
-}
-​
-  /* header */
-​
 body {
-  background: #eff3f8 !important;
+  background: #eff3f8;
   font-size: 16px;
   padding-bottom: 80px;
 }
-​
+
 div.pre-nav {
   padding: 40px 0px;
   background: #fff;
@@ -30,7 +20,6 @@ nav.navbar {
   margin-bottom: 0px;
   z-index: 999;
 }
-​
 ​
 .navbar-default .navbar-nav li a {
   padding: 20px 30px;
@@ -65,9 +54,7 @@ nav.navbar {
   margin: 13px 0px;
   width: 300px;
 }
-​
-  /* Layout */
-​
+
 .panel-box {
   background: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -115,7 +102,7 @@ textarea {
 ​
 .page .subtitle, .page .subtext {
   color: #3d515a;
-  font-weight: 500;
+  font-weight: bold;
   padding-top: 5px;
   margin: 0px;
 }
@@ -191,6 +178,11 @@ textarea {
 .project .content .title, .diary .content .title {
   color: #428bca;
   margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.project .content .subtitle, .diary .content .subtitle {
+  font-weight: bold;
 }
 ​
 .project .content p, .diary .content p {
@@ -198,11 +190,15 @@ textarea {
   margin-bottom: 10px;
   color: #5a5a5a;
 }
+
+.project .content p, .diary .content .goal {
+  margin-bottom: 0px;
+}
 ​
 .project, .diary {
   background: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  padding: 15px;
+  padding: 30px;
   margin-bottom: 30px;
 }
 ​ ​
@@ -243,6 +239,17 @@ textarea {
 .dashboard .contactsBlock .row:nth-last-child(1) {
   margin-bottom: 0px;
 }
+
+.page-nav {
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.logo-bar {
+  line-height: 100px;
+}
 ​
 .diary-post h2.title {
   margin-bottom: 20px;
@@ -280,9 +287,6 @@ textarea {
   height: 50px;
   padding-right: 25px;
 }
-​
-​
-  /* media queries for responsive */
 ​
 @media screen and (max-width: 767px) {
 

@@ -12,11 +12,11 @@
   <div class="diary">
 
     <div class="content">
-      <h3 class="title">${title}</h3><br/>
-      <p class="subtitle">${sessionType}</p><br/>
-      <p>Date <span>${date}</span></p><br/>
-      <p>at <span>${time}</span></p><br/>
-      <p>${goal}</p><br/>
+      <h3 class="title">${title}</h3>
+      <p class="subtitle">${sessionType}</p>
+      <p>Date <span>${date}</span></p>
+      <p>at <span>${time}</span></p>
+      <p class="goal">${goal}</p>
     </div>
 
   </div>

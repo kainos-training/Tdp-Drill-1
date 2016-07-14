@@ -14,7 +14,12 @@
   <body>
 
     <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/en/6/61/Kainos_company_logo.png" alt="kainos-logo" width="250px">
+
+        <div class="logo-bar">
+
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/61/Kainos_company_logo.png" alt="kainos-logo" width="250px">
+
+        </div>
 
 
           <ul class="nav nav-tabs">
@@ -23,7 +28,12 @@
 
             <br>
             <br>
-          <a href="/project">${project.name}</a>
+
+          <div class="page-nav">
+
+              <a href="/project">${project.name}</a>
+
+          </div>
 
     </div>
     <div class="container">
