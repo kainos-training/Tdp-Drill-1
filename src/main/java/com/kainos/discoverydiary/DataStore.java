@@ -20,6 +20,10 @@ public class DataStore {
 
 	public List<Project> getProjects() { return  projects; }
 
+	public Project getProject(int projectId){
+		return projects.stream().filter(x -> x.getId() == projectId).findFirst().get();
+	}
+
 	public void registerPerson(UUID id, String name, Integer age, String profilePictureName) {
 		Person newPerson = new Person();
 		newPerson.setId(id);

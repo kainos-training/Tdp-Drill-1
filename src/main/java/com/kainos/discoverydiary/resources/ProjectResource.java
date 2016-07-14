@@ -2,7 +2,6 @@ package com.kainos.discoverydiary.resources;
 
 import com.codahale.metrics.annotation.Timed;
 import com.kainos.discoverydiary.DataStore;
-import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.models.Project;
 import com.kainos.discoverydiary.views.ProjectDashboardView;
 import io.dropwizard.views.View;
@@ -30,7 +29,7 @@ public class ProjectResource {
     @Produces(MediaType.TEXT_HTML)
     @Path("{projectId}")
     public View index(@PathParam("projectId") final int projectId) {
-        Project project = dataStore.getProjects().stream().filter(x -> x.getId() == projectId).findFirst().get();
+        Project project = dataStore.getProject(projectId);
         return new ProjectDashboardView(project);
     }
 
