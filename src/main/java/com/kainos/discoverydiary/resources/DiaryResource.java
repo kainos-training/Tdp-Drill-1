@@ -8,6 +8,7 @@ import io.dropwizard.views.View;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 
 @Path("diary")
 public class DiaryResource {
@@ -21,7 +22,7 @@ public class DiaryResource {
     @Produces(MediaType.TEXT_HTML)
     @Path("add")
     public View index(){
-        return new DiaryAddView();
+        return new DiaryAddView(new ArrayList<String>());
     }
 
 }
