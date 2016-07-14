@@ -3,7 +3,11 @@ package com.kainos.discoverydiary;
 import com.google.common.collect.Lists;
 import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Person;
+<<<<<<< HEAD
 import com.kainos.discoverydiary.models.SessionType;
+=======
+import com.kainos.discoverydiary.models.Project;
+>>>>>>> master
 
 import java.sql.Time;
 import java.util.Date;
@@ -14,9 +18,13 @@ public class DataStore {
 
 	private static List<Person> people = Lists.newArrayList();
 
+	private static List<Project> projects = Lists.newArrayList();
+
 	public List<Person> getPeople() {
 		return people;
 	}
+
+	public List<Project> getProjects() { return  projects; }
 
 	public void registerPerson(UUID id, String name, Integer age, String profilePictureName) {
 		Person newPerson = new Person();

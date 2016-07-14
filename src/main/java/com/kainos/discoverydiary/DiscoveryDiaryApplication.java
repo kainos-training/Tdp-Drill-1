@@ -5,6 +5,7 @@ import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.resources.DiaryResource;
 import com.kainos.discoverydiary.resources.HomeResource;
 import com.kainos.discoverydiary.resources.PeopleResource;
+import com.kainos.discoverydiary.resources.ProjectResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.forms.MultiPartBundle;
@@ -29,6 +30,10 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         environment.jersey().register(homeResource);
         environment.jersey().register(peopleResource);
         environment.jersey().register(diaryResource);
+
+        final ProjectResource projectResource = new ProjectResource(new DataStore(), discoveryDiaryConfiguration);
+
+        environment.jersey().register(projectResource);
     }
 
     public static void main(String[] args) throws Exception {
