@@ -2,6 +2,7 @@ package com.kainos.discoverydiary;
 
 import com.github.dirkraft.dropwizard.fileassets.FileAssetsBundle;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
+import com.kainos.discoverydiary.resources.DiaryResource;
 import com.kainos.discoverydiary.resources.HomeResource;
 import com.kainos.discoverydiary.resources.PeopleResource;
 import com.kainos.discoverydiary.resources.ProjectResource;
@@ -25,10 +26,12 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         final HomeResource homeResource = new HomeResource();
         final PeopleResource peopleResource = new PeopleResource(new DataStore(), discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(new DataStore(), discoveryDiaryConfiguration);
+        final DiaryResource diaryResource = new DiaryResource();
 
         environment.jersey().register(homeResource);
         environment.jersey().register(peopleResource);
         environment.jersey().register(projectResource);
+        environment.jersey().register(diaryResource);
     }
 
     public static void main(String[] args) throws Exception {

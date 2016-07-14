@@ -12,10 +12,15 @@ import javax.ws.rs.core.MediaType;
 @Path("diary")
 public class DiaryResource {
 
+    public DiaryResource() {
+
+    }
+
     @GET
     @Timed
     @Produces(MediaType.TEXT_HTML)
-    public View addDiary(){
+    @Path("add")
+    public View index(){
         return new DiaryAddView();
     }
 

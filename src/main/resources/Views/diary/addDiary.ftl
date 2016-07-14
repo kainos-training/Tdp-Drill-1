@@ -1,11 +1,25 @@
 <#import "../layout.ftl" as layoutTemplate>
 <@layoutTemplate.layout>
 
+<a href="/project">Project</a>
+
 <div class="container panel-box">
 <h1>Add new diary entry</h1>
 <p class="lead">Please ensure accurate information is provided below before attempting to add this new diary entry.</p>
 ​
 <form enctype="multipart/form-data" action="#" method="post" autocomplete="off">
+
+    <#if errors??>
+        <div class="bg-danger text-danger">
+            <ul>
+            <#list errors as error>
+                <li>
+                    ${error}
+                </li>
+            </#list>
+            </ul>
+        </div>
+    </#if>
 
     <div class="form-group">
         <label for="title">Title</label>
