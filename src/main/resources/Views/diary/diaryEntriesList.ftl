@@ -2,8 +2,9 @@
 
 <@layoutTemplate.layout>
 
-
-
+    <#list entries as entry>
+      <@diaryEntry entry="entry"/>
+    </#list>
 
 </@layoutTemplate.layout>
 
