@@ -5,9 +5,7 @@
 a:hover {
 	text-decoration: none;
 }
-​
-/* header */
-​
+
 body {
 	background: #eff3f8;
 	font-size: 16px;
@@ -65,9 +63,7 @@ nav.navbar {
 	margin: 13px 0px;
 	width: 300px;
 }
-​
-/* Layout */
-​
+
 .panel-box {
 	background: #fff;
  	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -284,10 +280,7 @@ textarea {
 	height: 50px;
 	padding-right: 25px;
 }
-​
-​
-/* media queries for responsive */
-​
+
 @media screen and (max-width: 767px) {
 	
 	nav.navbar {
