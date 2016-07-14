@@ -2,6 +2,7 @@ package com.kainos.discoverydiary;
 
 import com.google.common.collect.Lists;
 import com.kainos.discoverydiary.models.Person;
+import com.kainos.discoverydiary.models.Project;
 
 import java.util.List;
 import java.util.UUID;
@@ -10,9 +11,13 @@ public class DataStore {
 
 	private static List<Person> people = Lists.newArrayList();
 
+	private static List<Project> projects = Lists.newArrayList();
+
 	public List<Person> getPeople() {
 		return people;
 	}
+
+	public List<Project> getProjects() { return  projects; }
 
 	public void registerPerson(UUID id, String name, Integer age, String profilePictureName) {
 		Person newPerson = new Person();
@@ -22,4 +27,6 @@ public class DataStore {
 		newPerson.setProfilePictureName(profilePictureName);
 		people.add(newPerson);
 	}
+
+
 }
