@@ -9,11 +9,11 @@ import java.util.Date;
 public class DiaryEntry {
     private SessionType sessionType;
     private String title;
-    private Date startDate;
-    private Time startTime;
+    private String startDate;
+    private String startTime;
     private String sessionGoal;
 
-    public DiaryEntry(SessionType sessionType, String title, Date startDate, Time startTime, String sessionGoal) {
+    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal) {
         this.sessionType = sessionType;
         this.title = title;
         this.startDate = startDate;
@@ -37,19 +37,19 @@ public class DiaryEntry {
         this.title = title;
     }
 
-    public Date getStartDate() {
-        return this.startDate;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Time getStartTime() {
+    public String getStartTime() {
         return this.startTime;
     }
 
-    public void setStartTime(Time startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
