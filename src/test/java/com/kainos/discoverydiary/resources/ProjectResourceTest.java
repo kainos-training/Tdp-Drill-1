@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by christopherg on 14/07/2016.
  */
-public class ProjectResourceTests {
+public class ProjectResourceTest {
 
     private ProjectResource projectResource;
     private DataStore dataStore;
