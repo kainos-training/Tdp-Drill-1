@@ -1,7 +1,336 @@
-body {
-  padding-top: 50px;
+* {
+	outline: none !important;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+​
+a:hover {
+	text-decoration: none;
+}
+​
+/* header */
+​
+body !important {
+	background: #eff3f8;
+	font-size: 16px;
+	padding-bottom: 80px;
+	padding-top: 80px;
+}
+​
+div.pre-nav {
+	padding: 40px 0px;
+	background: #fff;
+}
+​
+img.logo {
+	height: 50px;
+}
+​
+nav.navbar {
+	border-radius: 0px;
+	background: #192f56;
+	border: 0px;
+	margin-bottom: 0px;
+	z-index: 999;
+}
+​
+​
+.navbar-default .navbar-nav li a {
+	padding: 20px 30px;
+	font-size: 16px;
+}
+​
+.navbar-default .navbar-nav .active > a {
+	background: #34486b;
+	color: #fff;
+}
+​
+.navbar-default .navbar-nav .active > a:hover {
+	background: #34486b;
+	color: #fff;
+}
+​
+.navbar-default .navbar-nav .active > a:focus {
+	background: #34486b;
+	color: #fff;
+}
+​
+.navbar-form {
+	margin: 0px;
+	padding: 0px;
+}
+​
+.navbar-form .form-control {
+	border-radius: 50px;
+	height: 34px;
+	padding: 6px 25px;
+	border: none;
+	margin: 13px 0px;
+	width: 300px;
+}
+​
+/* Layout */
+​
+.panel-box !important {
+	background: #fff;
+ 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	padding: 30px;
+}
+​
+.panel-box header {
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #eee;
+}
+​
+.panel-box form .form-control {
+	max-width: 400px;
+}
+​
+label {
+	font-weight: 500;
+	color: #192f56;
+	padding-bottom: 5px;
+	width: 100%;
+}
+​
+label small {
+	font-size: 12px;
+}
+​
+textarea {
+	min-height: 135px;
+}
+​
+.form-group {
+	margin-bottom: 30px;
+}
+​
+.page {
+	padding: 0px 30px !important;
+}
+​
+.page .title {
+	margin: 0px;
+	font-weight: 400;
+	color: #192f56;
+}
+​
+.page .subtitle, .page .subtext {
+	color: #3d515a;
+	font-weight: 500;
+	padding-top: 5px;
+	margin: 0px;
+}
+​
+.button {
+	border: none;
+	padding: 15px 25px;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+​
+.button-small {
+	border: none;
+	padding: 15px 25px;
+	border-radius: 4px;
+}
+​
+.button-group {
+	margin-top: 30px;
+	display: inline-block;
+}
+​
+.button-group .single { 
+		margin-left: 0px;
+}
+​
+.button-group a {
+	margin-left: 20px;
+}
+​
+.link {
+	border: none;
+	padding: 15px 25px;
+	background: transparent;
+	text-decoration: none;
+}
+​
+.link:hover {
+	text-decoration: underline;
+}
+​
+.green {
+	background: #3cb878;
+	color: #fff;
+}
+​
+.green:hover {
+	background: #46db8e;
+}
+​
+.blue {
+	background: #192f56;
+	color: #fff;
+}
+​
+.breadcrumbs {
+	padding: 0px 30px;
+	background: #fff;
+	margin-bottom: 40px;
+	padding: 20px 0px;
+}
+​
+.breadcrumb {
+	padding: 0px 30px;
+	margin: 0px;
+	background: transparent;
+}
+​
+.breadcrumb span {
+	font-size: 14px;
+}
+​
+.project .content .title, .diary .content .title {
+	color: #428bca;
+	margin-bottom: 10px;
+}
+​
+.project .content p, .diary .content p {
+	padding: 0px;
+	margin-bottom: 10px;
+	color: #5a5a5a;
+}
+​
+.project, .diary {
+	background: #fff;
+ box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	padding: 15px;
+	margin-bottom: 30px;
+}
+​
+.project:nth-last-child(2), .diary:nth-last-child(2) {
+	margin-bottom: 0px;
+}
+​
+.project .content span, .diary .content span {
+	font-weight: 500;
+}
+​
+.dashboard .title {
+	margin-bottom: 10px;
+	color: #428bca;
+}
+​
+.dashboard p {
+	color: #5a5a5a;
+}
+​
+.dashboard .description {
+	line-height: 2;
+}
+​
+.dashboard .row {
+	margin-bottom: 20px;
+}
+​
+.dashboard .contactsBlock .contact {
+	line-height: 50px;
+}
+​
+.dashboard .contactsBlock .title {
+	margin-bottom: 0px;
+}
+​
+.dashboard .contactsBlock .contactPic {
+	height: 50px;
+	padding-right: 25px;
+}
+​
+.dashboard .contactsBlock .row:nth-last-child(1) {
+	margin-bottom: 0px;
+}
+​
+.diary-post h2.title {
+	margin-bottom: 20px;
+}
+​
+.diary-post span {
+	font-weight: 600;
+}
+​
+.diary-post .input-group { 
+	padding-top: 20px;
+}
+​
+.diary-post .tags {
+	margin-bottom: 30px;
+}
+​
+.attendees .attendee {
+	margin-bottom: 20px;
+}
+​
+.attendees .attendee .name {
+	margin-top: 5px;
+}
+​
+.attendees .attendee span {
+	font-weight: 400;
+	font-size: 14px;
+	margin-top: -5px;
+	display: inline-block;
+	color: #7c7c7c;
+}
+​
+.attendees .attendee img {
+	height: 50px;
+	padding-right: 25px;
+}
+​
+​
+/* media queries for responsive */
+​
+@media screen and (max-width: 767px) {
+	
+	nav.navbar {
+		position: fixed;
+		width: 100%;
+	}
+	
+	.navbar-default .navbar-toggle {
+		border-color: transparent;
+	}
+	
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+		background: transparent;
+	}
+	
+	.navbar-default .navbar-toggle .icon-bar {
+		background: #fff;
+		height: 3px;
+	}
+	
+	.page {
+		padding: 100px 15px 0px 15px !important;
+	}
+	
+	.dashboard .diaryBlock {
+		margin-bottom: 20px;
+	}
+	
+}
+​
+@media screen and (max-width: 991px) {
+	
+	.project .content, .diary .content {
+		padding-top: 15px;
+	}
+	
+	.diary-post .details {
+		margin-bottom: 30px;
+	}
+	
+}
+
+.test{
+background-color:red;
 }
