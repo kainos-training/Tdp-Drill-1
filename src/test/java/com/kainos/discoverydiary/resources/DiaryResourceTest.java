@@ -5,12 +5,10 @@ import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Project;
 import com.kainos.discoverydiary.models.SessionType;
 import com.kainos.discoverydiary.views.DiaryEntryListView;
-import io.dropwizard.views.View;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -73,7 +71,7 @@ public class DiaryResourceTest {
 
         // Add second, older data entry
         sessionType = SessionType.NFRs;
-        String title2 = "Data Entry 2";
+        String title2 = "NFR workshop";
         startDate = "10/06/2016";
         startTime = "16:00:00";
         sessionGoal = "Test 1";
