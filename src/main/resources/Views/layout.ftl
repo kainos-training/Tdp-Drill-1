@@ -23,7 +23,7 @@
 
             <br>
             <br>
-          <a href="/project">${project.name}</a>
+          <a href="/project/${project.id}">${project.name}</a>
 
     </div>
     <div class="container">
