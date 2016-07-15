@@ -33,11 +33,15 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         dataStore.AddProject(new Project(1, "Government", "This is a sample project and we do no care about the content of " +
                 "this sentence."));
         dataStore.AddProject(new Project(2, "Scottish Courts", "Scottish court service to allow management of cases"));
-
+        
         dataStore.addContact(1, 1, "Sean Devlin", "Graduate Software Engineer", "Kainos",
                 "s.devlin2@kainos.com", "02890947271", "07703848293");
         dataStore.addContact(1, 2, "Adam Kane", "Graduate Software Engineer", "Kainos",
                 "a.kane@kainos.com", "02878473829", "07794872838");
+
+        dataStore.addDiaryEntry(new DiaryEntry(SessionType.VISION, "Vision workshop", "18/06/2016", "16:00:00", "Create the vision statement for the new service."));
+        dataStore.addDiaryEntry(new DiaryEntry(SessionType.GOALS, "Goals workshop",  "21/06/2016", "17:00:00", "Agree what the goals will be for the new service"));
+        dataStore.addDiaryEntry(new DiaryEntry(SessionType.NFRs, "NFR workshop", "02/06/2016", "14:00:00", "To agree non-functional goals for the project."));
 
         final PeopleResource peopleResource = new PeopleResource(dataStore, discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(dataStore);
