@@ -9,6 +9,14 @@ body {
   color: #192f56;
 }
 
+@media screen and (max-width: 767px) {
+
+    .diary_bottom {
+        padding-bottom: 30px;
+    }
+
+}
+
 .dashBtn {
   font-size: 25px;
   color: #428bca;
