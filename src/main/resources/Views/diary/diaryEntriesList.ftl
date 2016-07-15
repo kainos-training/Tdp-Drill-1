@@ -1,42 +1,72 @@
 <#import "../layout.ftl" as layoutTemplate>
 
 <@layoutTemplate.layout>
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="pageTitle">Diary entries</h2>
+        </div>
+        <div class="col-md-4 diary_bottom">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter tag">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Search</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
 
-    <h2 class="pageTitle">Diary entries</h2>
-    <#if entries?has_content>
     <#list entries as entry>
       <@diaryEntry
-        id = "${entry.diaryId}"
+        diaryId="${entry.diaryId}"
         title="${entry.title}"
         sessionType="${entry.sessionType}"
         date="${entry.startDate}"
         time="${entry.startTime}"
-        goal="${entry.sessionGoal}" />
+        goal="${entry.sessionGoal}"
+        imageUrl="${entry.imageUrl}"
+         />
     </#list>
-    </#if>
 
     <#if !entries?has_content>
-    <div class="diary">
-      <div class="content">
-        <h3 class="title nocontent">No diary entries have been added.</h3>
-      </div>
-    </div>
-    </#if>
+        <div class="diary">
+          <div class="content">
+            <h3 class="title nocontent">No diary entries have been added.</h3>
+          </div>
+        </div>
+        </#if>
+
     <a href="/project/${project.id}/diary/add" class="btn btn-primary">Add diary entry</a>
 
 </@layoutTemplate.layout>
 
-<#macro diaryEntry id title sessionType date time goal>
- <a href="/project/${project.id}/diary/${id}"><div class="diary">
+<#macro diaryEntry diaryId title sessionType date time goal imageUrl>
+  <a href="/project/${project.id}/diary/${diaryId}"><div class="diary">
 
-    <div class="content">
-      <h3 class="title">${title}</h3>
-      <p class="subtitle">${sessionType}</p>
-      <p><span>Date </span>${date}</p>
-      <p><span>Start time </span>${time}</p>
-      <p class="goal"><span>Session goal</span> <br/>${goal}</p>
+    <div class="content clearfix">
+
+      <div class="row">
+
+          <div class="col-md-5 image">
+
+            <img src="${imageUrl}" alt="alt" width="100%">
+
+          </div>
+
+          <div class="col-md-7">
+
+            <h3 class="title">${title}</h3>
+            <p class="subtitle">${sessionType}</p>
+            <p><span>Date </span>${date}</p>
+            <p><span>Start time </span>${time}</p>
+            <p class="goal"><span>Session goal</span> <br/>${goal}</p>
+
+          </div>
+
+      </div>
+
     </div>
 
-  </div>
-  </a>
+  </div></a>
 </#macro>
