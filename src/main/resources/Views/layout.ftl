@@ -10,6 +10,7 @@
     <title>Discovery Diary</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/styles.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" rel="stylesheet">
   </head>
   <body>
 

@@ -4,6 +4,25 @@ body {
   padding-bottom: 80px;
 }
 
+.dashBtn {
+  font-size: 25px;
+  color: #428bca;
+}
+
+.projHead {
+  margin-bottom: 30px;
+}
+
+.dashBtn i {
+  font-size: 60px;
+  color: #192f56;
+  margin-right: 25px;
+}
+
+.dashBtn .text {
+  margin-top: 12px;
+}
+
 .button-small {
   border: none;
   padding: 15px 25px;
