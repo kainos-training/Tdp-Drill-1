@@ -13,7 +13,7 @@
             <div class="content">
               <h3 class="title">${contact.name}</h3>
               <p class="subtitle">${contact.company}</p>
-              <p><span>Job Title </span>${contact.jobTitle}</p>
+              <p><span>Job title </span>${contact.jobTitle}</p>
               <p><span>Email </span>${contact.email}</p>
               <p><span>Number </span>${contact.number}</p>
               <p class="goal"><span>Mobile </span>${contact.mobile}</p>
