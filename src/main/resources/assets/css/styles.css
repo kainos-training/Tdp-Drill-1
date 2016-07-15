@@ -4,6 +4,30 @@ body {
   padding-bottom: 80px;
 }
 
+.pageTitle {
+  margin: 0px 0px 30px 0px;
+  color: #192f56;
+}
+
+.dashBtn {
+  font-size: 25px;
+  color: #428bca;
+}
+
+.projHead {
+  margin-bottom: 30px;
+}
+
+.dashBtn i {
+  font-size: 60px;
+  color: #192f56;
+  margin-right: 25px;
+}
+
+.dashBtn .text {
+  margin-top: 12px;
+}
+
 .button-small {
   border: none;
   padding: 15px 25px;
@@ -26,6 +50,7 @@ body {
 div.pre-nav {
   padding: 40px 0px;
   background: #fff;
+  margin-bottom: 30px;
 }
 ​
 img.logo {
@@ -205,7 +230,7 @@ textarea {
 }
 ​ ​
 .project .content span, .diary .content span {
-  font-weight: 500;
+  font-weight: 800;
 }
 ​
 .dashboard .title {
