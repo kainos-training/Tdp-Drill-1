@@ -3,6 +3,9 @@ package com.kainos.discoverydiary;
 import com.github.dirkraft.dropwizard.fileassets.FileAssetsBundle;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.models.Person;
+import com.kainos.discoverydiary.models.DiaryEntry;
+import com.kainos.discoverydiary.models.SessionType;
+import com.kainos.discoverydiary.resources.DiaryResource;
 import com.kainos.discoverydiary.models.Project;
 import com.kainos.discoverydiary.resources.ContactResource;
 import com.kainos.discoverydiary.resources.PeopleResource;
@@ -30,6 +33,7 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         dataStore.AddProject(new Project(1, "Government", "This is a sample project and we do no care about the content of " +
                 "this sentence."));
         dataStore.AddProject(new Project(2, "Scottish Courts", "Scottish court service to allow management of cases"));
+
         dataStore.addContact(1, 1, "Sean Devlin", "Graduate Software Engineer", "Kainos",
                 "s.devlin2@kainos.com", "02890947271", "07703848293");
         dataStore.addContact(1, 2, "Adam Kane", "Graduate Software Engineer", "Kainos",
@@ -38,8 +42,18 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         final PeopleResource peopleResource = new PeopleResource(dataStore, discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(dataStore);
         final ContactResource contactResource = new ContactResource(dataStore);
+        final DiaryResource diaryResource = new DiaryResource(dataStore);
+
+
+        dataStore.addDiaryEntry(new DiaryEntry(SessionType.VISION, "Diary Entry 1", "18/06/2016", "16:00:00", "Session goal 1"));
+        dataStore.addDiaryEntry(new DiaryEntry(SessionType.GOALS, "Diary Entry 2",  "21/06/2016", "17:00:00", "Session goal 2"));
+        dataStore.addDiaryEntry(new DiaryEntry(SessionType.NFRs, "Diary Entry 3", "02/06/2016", "18:00:00", "Session goal 3"));
+
+
 
         environment.jersey().register(peopleResource);
+        environment.jersey().register(diaryResource);
+
         environment.jersey().register(projectResource);
         environment.jersey().register(contactResource);
     }

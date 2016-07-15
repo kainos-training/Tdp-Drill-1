@@ -10,20 +10,27 @@
     <title>Discovery Diary</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/styles.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" rel="stylesheet">
   </head>
   <body>
 
+  <div class="pre-nav">
+
+      <div class="container">
+
+          <img src="https://cdn3.kainos.com/wp-content/themes/kainos.com/images/Kainos-Logo.png?e2bd8e" alt="kainos-logo" width="250px">
+
+      </div>
+
+  </div>
+
     <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/en/6/61/Kainos_company_logo.png" alt="kainos-logo" width="250px">
 
+          <div class="page-nav">
 
-          <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="#">Project</a></li>
-          </ul>
+              <a href="/project/${project.id}">${project.name}</a>
 
-            <br>
-            <br>
-          <a href="/project/${project.id}">${project.name}</a>
+          </div>
 
     </div>
     <div class="container">
