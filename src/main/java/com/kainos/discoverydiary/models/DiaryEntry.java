@@ -1,7 +1,8 @@
 package com.kainos.discoverydiary.models;
 
-import java.sql.Time;
-import java.util.Date;
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 /**
  * DiaryEntry object
@@ -59,5 +60,10 @@ public class DiaryEntry {
 
     public void setSessionGoal(String sessionGoal) {
         this.sessionGoal = sessionGoal;
+    }
+
+    public DateTime getSessionDateAndTime(){
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
+        return DateTime.parse(startDate+ " "+startTime, formatter);
     }
 }

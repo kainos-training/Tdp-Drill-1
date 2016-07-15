@@ -2,6 +2,7 @@ package com.kainos.discoverydiary.resources;
 
 import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
+import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Project;
 import com.kainos.discoverydiary.views.DiaryEntryListView;
 import io.dropwizard.views.View;
@@ -9,6 +10,7 @@ import io.dropwizard.views.View;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import java.util.List;
 
 /**
  * Resource file for routing Diary Entry requests
@@ -27,6 +29,8 @@ public class DiaryResource {
     @GET
     public View listDiaryEntries(@PathParam("projectId") int projectId) {
         Project project = dataStore.getProject(projectId);
-        return new DiaryEntryListView(dataStore.getEntries(), project);
+        List<DiaryEntry> entries = dataStore.getEntries();
+        
+        return new DiaryEntryListView(entries, project);
     }
 }
