@@ -1,5 +1,6 @@
 package com.kainos.discoverydiary.resources;
 
+import com.codahale.metrics.annotation.Timed;
 import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.models.DiaryEntry;
@@ -43,9 +44,11 @@ public class DiaryResource {
         return new DiaryAddView(new ArrayList<String>(), project);
     }
 
-    @Path("diary/add/display")
-    @Produces(MediaType.TEXT_HTML)
+    @Path("{projectId}/diary/add")
     @POST
+    @Timed
+    @Produces(MediaType.TEXT_HTML)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
     public View saveDiary(@PathParam("projectId") int projectId,
                           @FormDataParam("title") String title,
                           @FormDataParam("category") String category,

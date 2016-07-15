@@ -5,7 +5,7 @@
 <h1>Add new diary entry</h1>
 <p class="lead">Please ensure accurate information is provided below before attempting to add this new diary entry.</p>
 ​
-<form id="myForm" class="form-horizontal" autocomplete="off" data-toggle="validator" method="post" action="/project/diary/add/diary">
+<form id="myForm" class="form-horizontal" autocomplete="off" data-toggle="validator" method="post" action="/project/${project.id}/diary/add">
 
    <div class="form-group">
         <label for="title">Title</label>

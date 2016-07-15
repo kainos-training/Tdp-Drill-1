@@ -16,4 +16,8 @@ public class DiaryReadOnlyView extends View {
         this.project = project;
     }
 
+    public Project getProject() { return project; }
+    public DiaryEntry getDiaryEntry() {
+        return  diaryEntry;
+    }
 }
