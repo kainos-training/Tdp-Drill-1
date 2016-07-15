@@ -59,6 +59,7 @@
 </form>
 </div>
 
-
+    <script src="/assets/js/jquery-3.1.0.min.js"></script>
+    <script src="/assets/js/validator.js"</script>
 
 </@layoutTemplate.layout>

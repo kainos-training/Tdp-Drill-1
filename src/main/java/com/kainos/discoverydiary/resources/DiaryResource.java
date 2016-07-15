@@ -39,7 +39,7 @@ public class DiaryResource {
     @Produces(MediaType.TEXT_HTML)
     public View addDiary(@PathParam("projectId") int projectId){
         Project project = dataStore.getProject(projectId);
-        return new DiaryAddView(new ArrayList<String>());
+        return new DiaryAddView(new ArrayList<String>(), project);
     }
 
 }
