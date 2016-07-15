@@ -1,9 +1,13 @@
 package com.kainos.discoverydiary;
 
 import com.google.common.collect.Lists;
+import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Person;
 import com.kainos.discoverydiary.models.Project;
+import com.kainos.discoverydiary.models.SessionType;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
@@ -45,9 +49,7 @@ public class DataStore {
 		people.add(newPerson);
 	}
 
-	public void AddProject(Project project){
-		projects.add(project);
-	}
+
 
 	public void addContact(int projectId, int contactId, String name, String jobTitle, String company, String email,
 						   String number, String mobile){
@@ -77,4 +79,26 @@ public class DataStore {
 	}
 
 
+	public void AddProject(Project project){
+		projects.add(project);
+	}
+
+	private static List<DiaryEntry> entries = Lists.newArrayList();
+
+	public void addDiaryEntry(DiaryEntry diaryEntry) { entries.add(diaryEntry); }
+
+	public List<DiaryEntry> getEntries() {
+		Collections.sort(entries, new Comparator<DiaryEntry>() {
+			@Override
+			public int compare(DiaryEntry z1, DiaryEntry z2) {
+				if (z1.getSessionDateAndTime().isAfter(z2.getSessionDateAndTime()))
+					return 1;
+				if (z1.getSessionDateAndTime().isBefore(z2.getSessionDateAndTime()))
+					return -1;
+				return 0;
+			}
+		});
+
+		return entries;
+	}
 }
