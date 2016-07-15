@@ -4,12 +4,10 @@ import com.google.common.collect.Lists;
 import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Person;
 import com.kainos.discoverydiary.models.Project;
-import com.kainos.discoverydiary.models.SessionType;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.UUID;
 
 public class DataStore {
 
@@ -94,6 +92,19 @@ public class DataStore {
 		entries.add(diaryEntry);
 
 		return lastUsedDiaryId;
+	}
+
+	public DiaryEntry getEntry(int diaryEntryId){
+		DiaryEntry result = null;
+
+		for(DiaryEntry entry : getEntries()){
+			if(entry.getDiaryId() == diaryEntryId){
+				result = entry;
+				break;
+			}
+		}
+
+		return result;
 	}
 
 	public List<DiaryEntry> getEntries() {

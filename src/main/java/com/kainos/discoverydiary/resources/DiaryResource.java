@@ -2,7 +2,6 @@ package com.kainos.discoverydiary.resources;
 
 import com.codahale.metrics.annotation.Timed;
 import com.kainos.discoverydiary.DataStore;
-import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Project;
 import com.kainos.discoverydiary.models.SessionType;
@@ -37,6 +36,14 @@ public class DiaryResource {
         return new DiaryEntryListView(entries, project);
     }
 
+    @Path("{projectId}/diary/{diaryId}")
+    @GET
+    public View Diary(@PathParam("projectId") int projectId, @PathParam("diaryId") int diaryId){
+        DiaryEntry entry = dataStore.getEntry(diaryId);
+        Project project = dataStore.getProject(projectId);
+
+        return new DiaryReadOnlyView(entry, project);
+    }
     @Path("{projectId}/diary/add")
     @GET
     public View addDiary(@PathParam("projectId") int projectId) {

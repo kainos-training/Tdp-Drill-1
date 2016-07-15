@@ -19,15 +19,16 @@
 </@layoutTemplate.layout>
 
 <#macro diaryEntry id title sessionType date time goal>
-  <div class="diary">
+ <a href="/project/${project.id}/diary/${id}"><div class="diary">
 
-    <a href="/project/${project.id}/diary/${id}><div class="content">
+    <div class="content">
       <h3 class="title">${title}</h3>
       <p class="subtitle">${sessionType}</p>
       <p><span>Date </span>${date}</p>
       <p><span>Start time </span>${time}</p>
       <p class="goal"><span>Session goal</span> <br/>${goal}</p>
-    </div></a>
+    </div>
 
   </div>
+  </a>
 </#macro>
