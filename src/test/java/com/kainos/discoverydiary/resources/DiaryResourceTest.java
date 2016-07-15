@@ -93,8 +93,9 @@ public class DiaryResourceTest {
 
         // Assert
         Assert.assertEquals(entries.get(0).getTitle(), title2);
-        Assert.assertEquals(entries.get(0).getImageUrl(),imageUrl);
-        Assert.assertEquals(entries.get(1).getImageUrl(),imageUrl);
+        Assert.assertEquals(entries.get(0).getImageUrl(),"http://i.imgur.com/BbpaP7N.png");
+        Assert.assertEquals(entries.get(1).getImageUrl(), "http://i.imgur.com/BbpaP7N.png");
+
 
     }
 }
