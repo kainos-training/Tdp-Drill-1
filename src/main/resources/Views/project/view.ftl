@@ -37,6 +37,30 @@
 
         </a>
 
+        <a href="/project/${project.id}/contact/list">
+
+                  <div class="col-sm-6 diaryBlock">
+
+                    <div class="panel-box dashBtn clearfix">
+
+                      <div class="pull-left">
+
+                        <i class="fa fa-user"></i>
+
+                      </div>
+
+                      <div class="pull-left text">
+
+                        Contacts
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </a>
+
       </div>
 
 </@layoutTemplate.layout>

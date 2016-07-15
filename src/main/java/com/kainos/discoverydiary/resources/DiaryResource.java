@@ -4,12 +4,14 @@ import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Project;
+import com.kainos.discoverydiary.views.DiaryAddView;
 import com.kainos.discoverydiary.views.DiaryEntryListView;
 import io.dropwizard.views.View;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,5 +32,12 @@ public class DiaryResource {
         List<DiaryEntry> entries = dataStore.getEntries(projectId);
         
         return new DiaryEntryListView(entries, project);
+    }
+
+    @Path("{projectId}/diary/add")
+    @GET
+    public View addDiary(@PathParam("projectId") int projectId) {
+        Project project = dataStore.getProject(projectId);
+        return new DiaryAddView(new ArrayList<String>(), project);
     }
 }

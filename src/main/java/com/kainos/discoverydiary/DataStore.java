@@ -17,6 +17,8 @@ public class DataStore {
 
 	private static List<Project> projects = Lists.newArrayList();
 
+	private static List<Person> contacts = Lists.newArrayList();
+
 
 	public List<Person> getPeople() {
 		return people;
@@ -38,7 +40,7 @@ public class DataStore {
 		return result;
 	}
 
-	public void registerPerson(UUID id, String name, Integer age, String profilePictureName) {
+	public void registerPerson(int id, String name, Integer age, String profilePictureName) {
 		Person newPerson = new Person();
 		newPerson.setId(id);
 		newPerson.setName(name);
@@ -48,9 +50,37 @@ public class DataStore {
 	}
 
 
-		public void AddProject(Project project){
-			projects.add(project);
+
+	public void addContact(int projectId, int contactId, String name, String jobTitle, String company, String email,
+						   String number, String mobile){
+		Person newPerson = new Person();
+		newPerson.setProjectId(projectId);
+		newPerson.setId(contactId);
+		newPerson.setName(name);
+		newPerson.setJobTitle(jobTitle);
+		newPerson.setCompany(company);
+		newPerson.setEmail(email);
+		newPerson.setNumber(number);
+		newPerson.setMobile(mobile);
+		contacts.add(newPerson);
+	}
+
+	public List<Person> getContacts(int projectId){
+
+		List<Person> result = Lists.newArrayList();
+
+		for(Person contact : contacts){
+			if(contact.getProjectId() == projectId){
+				result.add(contact);
+			}
 		}
+
+		return result;
+	}
+
+	public void AddProject(Project project){
+		projects.add(project);
+	}
 
 	private static List<DiaryEntry> entries = Lists.newArrayList();
 
