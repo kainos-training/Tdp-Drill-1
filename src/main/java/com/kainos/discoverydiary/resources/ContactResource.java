@@ -32,6 +32,7 @@ public class ContactResource {
     @Path("list")
     public View index(@PathParam("projectId") final int projectId) {
         List<Person> contacts = dataStore.getContacts(projectId);
-        return new ContactListView(contacts);
+        Project project = dataStore.getProject(projectId);
+        return new ContactListView(contacts, project);
     }
 }
