@@ -13,11 +13,26 @@ public class DataStore {
 
 	private static List<Project> projects = Lists.newArrayList();
 
+
 	public List<Person> getPeople() {
 		return people;
 	}
 
 	public List<Project> getProjects() { return  projects; }
+
+	public Project getProject(int projectId){
+
+		Project result = null;
+
+		for(Project project : getProjects()){
+			if(project.getId() == projectId){
+				result = project;
+				break;
+			}
+		}
+
+		return result;
+	}
 
 	public void registerPerson(UUID id, String name, Integer age, String profilePictureName) {
 		Person newPerson = new Person();
@@ -26,6 +41,10 @@ public class DataStore {
 		newPerson.setAge(age);
 		newPerson.setProfilePictureName(profilePictureName);
 		people.add(newPerson);
+	}
+
+	public void AddProject(Project project){
+		projects.add(project);
 	}
 
 
