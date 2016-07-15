@@ -9,7 +9,7 @@
 
    <div class="form-group">
         <label for="title">Title</label>
-        <input name="title" id="title" type="text" placeholder="Title" class="form-control" data-error="Enter title" required />
+        <input name="title" id="title" type="text" placeholder="Title" data-error="Enter title" class="form-control" required />
         <div class="help-block with-errors"></div>
    </div>
     ​
@@ -47,7 +47,7 @@
     ​
     <div class="form-group">
         <label for="sessionGoal">Session goal</label>
-        <textarea name="sessionGoal" id="sessionGoal" data-role="none" data-error="Enter session goal" placeholder="Enter text here..." class="form-control sessionGoalTextArea" required></textarea>
+        <textarea name="sessionGoal" id="sessionGoal" data-error="Enter session goal" class="form-control" placeholder="Enter text here..." class="form-control" required></textarea>
         <div class="help-block with-errors"></div>
     </div>
     ​
