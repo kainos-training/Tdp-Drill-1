@@ -3,7 +3,7 @@
 <@layoutTemplate.layout>
 
     <h2 class="pageTitle">Diary entries</h2>
-
+    <#if entries?has_content>
     <#list entries as entry>
       <@diaryEntry
         id = "${entry.diaryId}"
@@ -13,7 +13,15 @@
         time="${entry.startTime}"
         goal="${entry.sessionGoal}" />
     </#list>
+    </#if>
 
+    <#if !entries?has_content>
+    <div class="diary">
+      <div class="content">
+        <h3 class="title nocontent">No diary entries have been added.</h3>
+      </div>
+    </div>
+    </#if>
     <a href="/project/${project.id}/diary/add" class="btn btn-primary">Add diary entry</a>
 
 </@layoutTemplate.layout>
