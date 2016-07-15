@@ -9,13 +9,23 @@
     <!-- Bootstrap -->
     <title>Discovery Diary</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
-
+    <link href="/assets/css/styles.css" rel="stylesheet">
   </head>
   <body>
 
+  <div class="pre-nav">
+
+      <div class="container">
+
+          <img src="https://cdn3.kainos.com/wp-content/themes/kainos.com/images/Kainos-Logo.png?e2bd8e" alt="kainos-logo" width="250px">
+
+      </div>
+
+  </div>
+
     <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/en/6/61/Kainos_company_logo.png" alt="kainos-logo" width="250px">
+
+
 
 
           <ul class="nav nav-tabs">
@@ -25,19 +35,18 @@
             <br>
             <br>
 
+          <div class="page-nav">
+
+              <a href="/project/${project.id}">${project.name}</a>
+
+          </div>
+
     </div>
     <div class="container">
 
       <#nested/>
 
     </div><!-- /.container -->
-
-    <!-- validator class -->
-
-    <script src="/assets/js/jquery-3.1.0.min.js"></script>
-
-    <script src="/assets/js/validator.js"></script>
-
   </body>
 </html>
 </#macro>

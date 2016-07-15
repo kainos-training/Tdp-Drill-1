@@ -20,28 +20,5 @@ import static org.junit.Assert.assertEquals;
 
 public class DiaryEntryAddTest {
 
-    private static List<ViewRenderer> renders = Lists.<ViewRenderer>newArrayList(new FreemarkerViewRenderer());
-
-
-    @ClassRule
-    public static final ResourceTestRule resources = ResourceTestRule.builder()
-            .addResource(new DiaryResource())
-            .addProvider(new ViewMessageBodyWriter(new MetricRegistry(), renders))
-            .build();
-
-    @Before
-    public void setup() {
-
-    }
-
-    @Test
-    public void loadPage() {
-        Response response = resources.client()
-                .target("/diary/add")
-                .request(MediaType.TEXT_HTML_TYPE)
-                .get();
-
-        assertEquals(200, response.getStatus());
-    }
 
 }
