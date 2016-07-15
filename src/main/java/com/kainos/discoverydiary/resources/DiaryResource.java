@@ -57,6 +57,7 @@ public class DiaryResource {
                           @FormDataParam("endTime") String endTime,
                           @FormDataParam("sessionGoal") String sessionGoal) {
 
+
         Project project = dataStore.getProject(projectId);
 
         SessionType sessionType;

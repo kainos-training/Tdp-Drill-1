@@ -5,7 +5,7 @@
 <h1>Add new diary entry</h1>
 <p class="lead">Please ensure accurate information is provided below before attempting to add this new diary entry.</p>
 ​
-<form id="myForm" class="form-horizontal" autocomplete="off" data-toggle="validator" method="post" action="/project/${project.id}/diary/add">
+<form enctype="multipart/form-data" id="myForm" class="form-horizontal" autocomplete="off" data-toggle="validator" method="post" action="/project/${project.id}/diary/add">
 
    <div class="form-group">
         <label for="title">Title</label>
@@ -15,13 +15,13 @@
     ​
     <div class="form-group">
         <label for="category">Category</label> <br/>
-        <select id="category" class="form-control" data-error="Select category" required>
+        <select id="category" name="category" class="form-control" data-error="Select category" required>
             <option class="form-control" value="" disabled selected>Select category</option>
-            <option class="form-control" value="vision">Vision</option>
-            <option class="form-control" value="goals">Goals</option>
-            <option class="form-control" value="mercedes">User story creation</option>
-            <option class="form-control" value="nfrs">NFRs</option>
-            <option class="form-control" value="other">Other</option>
+            <option class="form-control" value="VISION">VISION</option>
+            <option class="form-control" value="GOALS">GOALS</option>
+            <option class="form-control" value="USER_STORY_CREATION">USER STORY CREATION</option>
+            <option class="form-control" value="NFRs">NFRs</option>
+            <option class="form-control" value="OTHER">OTHER</option>
         </select>
         <div class="help-block with-errors"></div>
     </div>
