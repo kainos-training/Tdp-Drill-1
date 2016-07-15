@@ -21,7 +21,17 @@ public class DataStore {
 	public List<Project> getProjects() { return  projects; }
 
 	public Project getProject(int projectId){
-		return projects.stream().filter(x -> x.getId() == projectId).findFirst().get();
+
+		Project result = null;
+
+		for(Project project : getProjects()){
+			if(project.getId() == projectId){
+				result = project;
+				break;
+			}
+		}
+
+		return result;
 	}
 
 	public void registerPerson(UUID id, String name, Integer age, String profilePictureName) {
