@@ -129,6 +129,12 @@ label small {
 textarea {
   min-height: 135px;
 }
+
+@media screen and (max-width: 991px) {
+    .diary .image {
+        margin-bottom: 20px;
+    }
+}
 ​
 .form-group {
   margin-bottom: 30px;
@@ -225,7 +231,7 @@ textarea {
 .project, .diary {
   background: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  padding: 30px;
+  padding: 15px;
   margin-bottom: 30px;
 }
 ​ ​

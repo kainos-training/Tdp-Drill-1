@@ -50,6 +50,12 @@
         <textarea name="sessionGoal" id="sessionGoal" data-role="none" data-error="Enter session goal" placeholder="Enter text here..." class="form-control sessionGoalTextArea" required></textarea>
         <div class="help-block with-errors"></div>
     </div>
+
+    <div class="form-group">
+            <label for="sessionGoal">Image</label>
+            <textarea name="imageUrl" id="imageUrl" data-role="none" placeholder="Enter image url..." class="form-control sessionGoalTextArea"></textarea>
+            <div class="help-block with-errors"></div>
+        </div>
     ​
     ​
     <input type="submit" value="Save diary entry" class="btn btn-primary" />

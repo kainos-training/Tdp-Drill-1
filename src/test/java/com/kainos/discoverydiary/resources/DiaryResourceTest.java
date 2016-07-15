@@ -1,5 +1,6 @@
 package com.kainos.discoverydiary.resources;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Project;
@@ -38,8 +39,11 @@ public class DiaryResourceTest {
         String startDate = "18/06/2016";
         String startTime = "16:00:00";
         String sessionGoal = "Test 1";
+        String imageUrl = "";
+        
+        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal,
+                projectId, imageUrl);
 
-        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, projectId);
         dataStore.addDiaryEntry(diaryEntry);
 
         // Act
@@ -65,8 +69,11 @@ public class DiaryResourceTest {
         String startDate = "18/06/2016";
         String startTime = "16:00:00";
         String sessionGoal = "Test 1";
+        String imageUrl = "";
 
-        DiaryEntry diaryEntry1 = new DiaryEntry(sessionType, title1, startDate, startTime, sessionGoal, projectId);
+
+        DiaryEntry diaryEntry1 = new DiaryEntry(sessionType, title1, startDate, startTime, sessionGoal,
+                projectId, imageUrl);
         dataStore.addDiaryEntry(diaryEntry1);
 
         // Add second, older data entry
@@ -76,7 +83,8 @@ public class DiaryResourceTest {
         startTime = "16:00:00";
         sessionGoal = "Test 1";
 
-        DiaryEntry diaryEntry2 = new DiaryEntry(sessionType, title2, startDate, startTime, sessionGoal, projectId);
+        DiaryEntry diaryEntry2 = new DiaryEntry(sessionType, title2, startDate, startTime, sessionGoal,
+                projectId, imageUrl);
         dataStore.addDiaryEntry(diaryEntry2);
 
         // Act
@@ -85,5 +93,8 @@ public class DiaryResourceTest {
 
         // Assert
         Assert.assertEquals(entries.get(0).getTitle(), title2);
+        Assert.assertEquals(entries.get(0).getImageUrl(),imageUrl);
+        Assert.assertEquals(entries.get(1).getImageUrl(),imageUrl);
+
     }
 }
