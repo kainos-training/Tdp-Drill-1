@@ -18,6 +18,16 @@ public class DiaryEntry {
     private String imageUrl;
     private int projectID;
 
+    
+    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal,
+                      int projectID) {
+        this.sessionType = sessionType;
+        this.title = title;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.sessionGoal = sessionGoal;
+        this.projectID = projectID;
+    }
 
     public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal,
                       int projectID, String imageUrl) {
