@@ -26,7 +26,15 @@
     <div class="form-group">
       <label for="sessionGoal">Session goal</label>
        <p name="sessionGoal" id="sessionGoal">${diaryEntry.sessionGoal}</p>
-    </div>   ​
+    </div>
+
+     <br​/>
+
+     <div class="form-group">
+           <label for="image">Image URL</label>
+            <p name="image" id="image">${diaryEntry.imageUrl}</p>
+         </div>
+
 </div>
 
 
