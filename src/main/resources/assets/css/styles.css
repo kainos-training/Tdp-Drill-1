@@ -4,6 +4,10 @@ body {
   padding-bottom: 80px;
 }
 
+.hintText {
+  font-size: 12px;
+}
+
 .pageTitle {
   margin: 0px 0px 30px 0px;
   color: #192f56;
