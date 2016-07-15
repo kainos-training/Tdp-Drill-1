@@ -5,12 +5,10 @@ import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Project;
 import com.kainos.discoverydiary.models.SessionType;
 import com.kainos.discoverydiary.views.DiaryEntryListView;
-import io.dropwizard.views.View;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
