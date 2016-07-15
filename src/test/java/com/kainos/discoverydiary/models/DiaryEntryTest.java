@@ -34,5 +34,6 @@ public class DiaryEntryTest {
         Assert.assertEquals(diaryEntry.getStartTime(), startTime);
         Assert.assertEquals(diaryEntry.getSessionGoal(), sessionGoal);
         Assert.assertEquals(diaryEntry.getSessionType(), sessionType);
+        Assert.assertEquals(diaryEntry.getImageUrl(), diaryEntry.DEFAULT_IMAGE_URL);
     }
 }
