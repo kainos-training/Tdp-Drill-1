@@ -4,7 +4,6 @@ import com.github.dirkraft.dropwizard.fileassets.FileAssetsBundle;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
 import com.kainos.discoverydiary.resources.DiaryResource;
 import com.kainos.discoverydiary.models.Project;
-import com.kainos.discoverydiary.resources.HomeResource;
 import com.kainos.discoverydiary.resources.PeopleResource;
 import com.kainos.discoverydiary.resources.ProjectResource;
 import io.dropwizard.Application;
@@ -30,12 +29,10 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         dataStore.AddProject(new Project(1, "Government", "This is a sample project and we do no care about the content of " +
                 "this sentence."));
         dataStore.AddProject(new Project(2, "Scottish Courts", "Scottish court service to allow management of cases"));
-        final HomeResource homeResource = new HomeResource();
         final PeopleResource peopleResource = new PeopleResource(dataStore, discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(dataStore);
         final DiaryResource diaryResource = new DiaryResource(dataStore, discoveryDiaryConfiguration);
 
-        environment.jersey().register(homeResource);
         environment.jersey().register(peopleResource);
         environment.jersey().register(diaryResource);
 
