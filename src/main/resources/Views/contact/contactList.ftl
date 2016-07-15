@@ -2,21 +2,18 @@
 
 <@layoutTemplate.layout>
 
-  <div class="contact">
 
 
     <#list contacts as contact>
 
-    <div class="content panel-box">
+    <div class="well">
       <h3 class="title">${contact.name}</h3>
       <p class="subtitle">${contact.jobTitle}</p>
-      <p>Company: <span>${contact.company}</span></p>
-      <p>Email: <span>${contact.email}</span></p>
-      <p>Landline: ${contact.number}</p>
-      <p>Mobile: ${contact.mobile}</p>
+      <pre>Company: <span>${contact.company}</span> <br>Email: <span>${contact.email}</span>      Landline: ${contact.number}     Mobile: ${contact.mobile}</pre>
     </div>
+    <br>
     </#list>
-  </div>
+
 
 
 
