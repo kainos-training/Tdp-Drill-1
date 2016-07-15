@@ -13,13 +13,19 @@
   </head>
   <body>
 
+  <div class="pre-nav">
+
+      <div class="container">
+
+          <img src="https://cdn3.kainos.com/wp-content/themes/kainos.com/images/Kainos-Logo.png?e2bd8e" alt="kainos-logo" width="250px">
+
+      </div>
+
+  </div>
+
     <div class="container">
 
-        <div class="logo-bar">
 
-            <img src="https://upload.wikimedia.org/wikipedia/en/6/61/Kainos_company_logo.png" alt="kainos-logo" width="250px">
-
-        </div>
 
 
           <ul class="nav nav-tabs">
@@ -31,7 +37,7 @@
 
           <div class="page-nav">
 
-              <a href="/project">${project.name}</a>
+              <a href="/project/${project.id}">${project.name}</a>
 
           </div>
 
