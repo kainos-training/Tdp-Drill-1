@@ -45,7 +45,7 @@ public class DiaryEntryTest {
         String sessionGoal = "Test 1";
 
         // Act
-        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, "bob, bob2, bob3, bob4");
+        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, "bob,bob2,bob3,bob4");
 
         Assert.assertEquals(diaryEntry.getTags().get(0), "bob");
 

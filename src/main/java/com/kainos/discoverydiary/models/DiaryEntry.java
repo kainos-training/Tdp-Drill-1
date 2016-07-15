@@ -83,7 +83,7 @@ public class DiaryEntry {
     }
 
     public List<String> getTags() {
-        List<String> seperatedTags = Arrays.asList(tags.split(", "));
+        List<String> seperatedTags = Arrays.asList(tags.split(","));
         return seperatedTags;
     }
 

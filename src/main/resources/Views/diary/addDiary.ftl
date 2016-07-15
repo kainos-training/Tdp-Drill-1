@@ -53,7 +53,7 @@
 
     <div class="form-group">
         <label for=tags"">Tags</label>
-        <input type="text" id="tags" name="tags" placeholder="Tags, must be comma seperated" class="form-control" value="">
+        <input type="text" id="tags" name="tags" placeholder="Tags, must be comma seperated" pattern="^([a-z0-9])+(,[a-z0-9]+)*$" class="form-control" value="">
     </div>
     ​
     ​
