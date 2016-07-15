@@ -16,11 +16,9 @@ import javax.ws.rs.PathParam;
 @Path("project")
 public class DiaryResource {
     final DataStore dataStore;
-    final DiscoveryDiaryConfiguration configuration;
 
-    public DiaryResource(DataStore dataStore, DiscoveryDiaryConfiguration configuration) {
+    public DiaryResource(DataStore dataStore) {
         this.dataStore = dataStore;
-        this.configuration = configuration;
     }
 
     @Path("{projectId}/diary")

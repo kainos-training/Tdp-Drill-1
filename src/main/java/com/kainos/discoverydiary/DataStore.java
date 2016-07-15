@@ -61,5 +61,7 @@ public class DataStore {
 		entries.add(new DiaryEntry(SessionType.NFRs, "Diary Entry 3", "24/06/2016git ", "18:00:00", "Test 3"));
 	}
 
+	public void addDiaryEntry(DiaryEntry diaryEntry) { entries.add(diaryEntry); }
+
 	public List<DiaryEntry> getEntries() { return entries; }
 }
