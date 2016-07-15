@@ -50,6 +50,7 @@ public class DiaryResource {
     @Produces(MediaType.TEXT_HTML)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public View saveDiary(@PathParam("projectId") int projectId,
+                          @PathParam("diaryId") int diaryId,
                           @FormDataParam("title") String title,
                           @FormDataParam("category") String category,
                           @FormDataParam("date") String date,

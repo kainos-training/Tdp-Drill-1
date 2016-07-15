@@ -19,6 +19,8 @@ public class DataStore {
 
 	private static List<Person> contacts = Lists.newArrayList();
 
+	private static int lastUsedDiaryId = 0;
+
 
 	public List<Person> getPeople() {
 		return people;
@@ -85,7 +87,14 @@ public class DataStore {
 
 	private static List<DiaryEntry> entries = Lists.newArrayList();
 
-	public void addDiaryEntry(DiaryEntry diaryEntry) { entries.add(diaryEntry); }
+	public int addDiaryEntry(DiaryEntry diaryEntry)
+	{
+		lastUsedDiaryId++;
+		diaryEntry.setDiaryId(lastUsedDiaryId);
+		entries.add(diaryEntry);
+
+		return lastUsedDiaryId;
+	}
 
 	public List<DiaryEntry> getEntries() {
 		Collections.sort(entries, new Comparator<DiaryEntry>() {

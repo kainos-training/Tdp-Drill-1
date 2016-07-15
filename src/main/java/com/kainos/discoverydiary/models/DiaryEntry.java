@@ -13,13 +13,23 @@ public class DiaryEntry {
     private String startDate;
     private String startTime;
     private String sessionGoal;
+    private int diaryId;
 
     public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal) {
+
         this.sessionType = sessionType;
         this.title = title;
         this.startDate = startDate;
         this.startTime = startTime;
         this.sessionGoal = sessionGoal;
+    }
+
+    public int getDiaryId() {
+        return diaryId;
+    }
+
+    public void setDiaryId(int id) {
+        this.diaryId = id;
     }
 
     public SessionType getSessionType() {
