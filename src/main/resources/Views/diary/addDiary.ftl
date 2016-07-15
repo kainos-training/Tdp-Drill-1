@@ -35,13 +35,13 @@
     ​
     <div class="form-group">
         <label for="startTime">Start time</label>
-        <input name="startTime" id="startTime" pattern="^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$" type="text" placeholder="08:00 - 24hr clock" data-error="Enter start time in format hh/mm" class="form-control" required />
+        <input name="startTime" id="startTime" pattern="^(2[0-3]|[01]?[0-9]){2}:([0-5]?[0-9]){2}$" type="text" placeholder="08:00 - 24hr clock" data-error="Enter start time in format hh/mm" class="form-control" required />
         <div class="help-block with-errors"></div>
     </div>
     ​
     <div class="form-group">
         <label for="endTime">End time</label>
-        <input name="endTime" id="endTime" pattern="^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$" type="text" placeholder="08:00 - 24hr clock" data-error="Enter end time in format hh/mm" class="form-control" required />
+        <input name="endTime" id="endTime" pattern="^(2[0-3]|[01]?[0-9]){2}:([0-5]?[0-9]){2}$" type="text" placeholder="08:00 - 24hr clock" data-error="Enter end time in format hh/mm" class="form-control" required />
         <div class="help-block with-errors"></div>
     </div>
     ​
