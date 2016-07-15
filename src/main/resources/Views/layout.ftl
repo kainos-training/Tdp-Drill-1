@@ -26,16 +26,6 @@
 
     <div class="container">
 
-
-
-
-          <ul class="nav nav-tabs">
-            <li role="presentation" class="active"><a href="#">Project</a></li>
-          </ul>
-
-            <br>
-            <br>
-
           <div class="page-nav">
 
               <a href="/project/${project.id}">${project.name}</a>
