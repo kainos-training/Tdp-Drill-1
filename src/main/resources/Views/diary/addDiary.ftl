@@ -17,8 +17,8 @@
     ​
     <div class="form-group">
         <label for="category">Category</label> <br/>
-        <select id="category" class="form-control" data-error="Select catergory" required>
-            <option class="form-control" value="" disabled selected>Select catergory</option>
+        <select id="category" class="form-control" data-error="Select category" required>
+            <option class="form-control" value="" disabled selected>Select category</option>
             <option class="form-control" value="vision">Vision</option>
             <option class="form-control" value="goals">Goals</option>
             <option class="form-control" value="mercedes">User story creation</option>
@@ -30,7 +30,7 @@
     ​
     <div class="form-group">
         <label for="date">Date</label>
-        <input name="date" id="date" type="text" placeholder="dd//mm//yyyy" data-error="Enter date" class="form-control" required />
+        <input name="date" id="date" type="text" placeholder="dd/mm/yyyy" data-error="Enter date" class="form-control" required />
         <div class="help-block with-errors"></div>
     </div>
     ​
