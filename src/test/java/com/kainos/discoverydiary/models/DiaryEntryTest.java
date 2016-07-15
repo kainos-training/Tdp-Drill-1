@@ -23,9 +23,10 @@ public class DiaryEntryTest {
         String startDate = "18/06/2016";
         String startTime = "16:00:00";
         String sessionGoal = "Test 1";
+        String imageUrl="";
 
         // Act
-        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal);
+        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, imageUrl);
 
         // Assert
         Assert.assertEquals(diaryEntry.getTitle(), title);

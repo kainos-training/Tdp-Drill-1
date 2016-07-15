@@ -8,18 +8,23 @@ import org.joda.time.format.DateTimeFormatter;
  * DiaryEntry object
  */
 public class DiaryEntry {
+
+    final String DEFAULT_IMAGE_URL="http://i.imgur.com/BbpaP7N.png";
     private SessionType sessionType;
     private String title;
     private String startDate;
     private String startTime;
     private String sessionGoal;
+    private String imageUrl;
 
-    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal) {
+
+    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal, String imageUrl) {
         this.sessionType = sessionType;
         this.title = title;
         this.startDate = startDate;
         this.startTime = startTime;
         this.sessionGoal = sessionGoal;
+        this.imageUrl = imageUrl;
     }
 
     public SessionType getSessionType() {
@@ -65,5 +70,11 @@ public class DiaryEntry {
     public DateTime getSessionDateAndTime(){
         DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
         return DateTime.parse(startDate+ " "+startTime, formatter);
+    }
+    public String getImageUrl() {
+        if(imageUrl.equals(""))
+            return DEFAULT_IMAGE_URL;
+       else
+            return imageUrl;
     }
 }
