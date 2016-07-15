@@ -27,6 +27,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.UUID;
 
 @Path("people")
@@ -83,7 +84,9 @@ public class PeopleResource {
             return new PeopleAddView(errors);
         }
 
-        UUID idForNewPerson = UUID.randomUUID();
+        Random rn = new Random();
+        int idForNewPerson = rn.nextInt();
+
 
         // creating path for image and storing the image with the id of the person plus the image file extension
         String imagesPath = configuration.getProfileImagesFilePath();
@@ -92,7 +95,7 @@ public class PeopleResource {
             imagesPath += "/";
         }
 
-        String profilePictureName = idForNewPerson.toString() + "." + com.google.common.io.Files.getFileExtension(fileMetaData.getFileName());
+        String profilePictureName = Integer.toString(idForNewPerson) + "." + com.google.common.io.Files.getFileExtension(fileMetaData.getFileName());
         String profileImageUploadPathAndFileName = imagesPath + "/" + profilePictureName;
 
         try {

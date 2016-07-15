@@ -4,19 +4,31 @@ import java.util.UUID;
 
 public class Person {
 
-	UUID id;
+	int id;
+
+	int projectId;
 
 	String name;
+
+	String jobTitle;
+
+	String company;
+
+	String email;
+
+	String number;
+
+	String mobile;
 
 	Integer age;
 
 	String profilePictureName;
 
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -35,6 +47,30 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public int getProjectId() { return projectId; }
+
+	public void setProjectId(int projectId) {this.projectId = projectId; }
+
+	public String getJobTitle() { return jobTitle; }
+
+	public void setJobTitle(String jobTitle) { this.jobTitle = jobTitle; }
+
+	public String getNumber() { return number; }
+
+	public void setNumber(String number) { this.number = number; }
+
+	public String getCompany() { return company; }
+
+	public void setCompany(String company) { this.company = company; }
+
+	public String getEmail(){ return email; }
+
+	public void setEmail(String email) { this.email = email; }
+
+	public String getMobile() { return mobile; }
+
+	public void setMobile(String mobile) { this.mobile = mobile; }
 
 	public String getProfilePictureName() {
 		return profilePictureName;

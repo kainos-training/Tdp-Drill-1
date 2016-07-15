@@ -1,19 +1,20 @@
 package com.kainos.discoverydiary.views;
 
+import com.kainos.discoverydiary.models.Person;
 import io.dropwizard.views.View;
 
 import java.util.List;
 
 public class ContactListView extends View {
 
-    private final List<String> errors;
+    private final List<Person> contacts;
 
-    public ContactListView(List<String> errors) {
+    public ContactListView(List<Person> contacts) {
         super("/Views/contact/contactList.ftl");
-        this.errors = errors;
+        this.contacts = contacts;
     }
 
-    public List<String> getErrors() {
-        return errors;
+    public List<Person> getContacts() {
+        return contacts;
     }
 }

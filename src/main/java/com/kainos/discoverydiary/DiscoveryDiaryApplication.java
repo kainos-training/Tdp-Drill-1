@@ -2,7 +2,9 @@ package com.kainos.discoverydiary;
 
 import com.github.dirkraft.dropwizard.fileassets.FileAssetsBundle;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
+import com.kainos.discoverydiary.models.Person;
 import com.kainos.discoverydiary.models.Project;
+import com.kainos.discoverydiary.resources.ContactResource;
 import com.kainos.discoverydiary.resources.PeopleResource;
 import com.kainos.discoverydiary.resources.ProjectResource;
 import io.dropwizard.Application;
@@ -28,11 +30,16 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         dataStore.AddProject(new Project(1, "Government", "This is a sample project and we do no care about the content of " +
                 "this sentence."));
         dataStore.AddProject(new Project(2, "Scottish Courts", "Scottish court service to allow management of cases"));
+        dataStore.addContact(1, 1, "Sean Devlin", "Graduate Software Engineer", "Kainos",
+                "s.devlin2@kainos.com", "02890947271", "07703848293");
+
         final PeopleResource peopleResource = new PeopleResource(dataStore, discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(dataStore);
+        final ContactResource contactResource = new ContactResource(dataStore);
 
         environment.jersey().register(peopleResource);
         environment.jersey().register(projectResource);
+        environment.jersey().register(contactResource);
     }
 
     public static void main(String[] args) throws Exception {
