@@ -1,5 +1,6 @@
 package com.kainos.discoverydiary.models;
 
+import com.kainos.discoverydiary.DataStore;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -48,6 +49,25 @@ public class DiaryEntryTest {
         DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, "bob,bob2,bob3,bob4");
 
         Assert.assertEquals(diaryEntry.getTags().get(0), "bob");
+
+    }
+
+    @Test
+    public void adds_tags_to_data_store(){
+
+        DataStore dataStore = new DataStore();
+        SessionType sessionType = SessionType.NFRs;
+        String title = "Test Data Entry";
+        String startDate = "18/06/2016";
+        String startTime = "16:00:00";
+        String sessionGoal = "Test 1";
+        dataStore.addDiaryEntry(new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, "bob,bob2,bob3,bob4"));
+
+        String firstTag = dataStore.getEntries().get(dataStore.getEntries().size() - 1).getTags().get(0);
+        String lastTag = dataStore.getEntries().get(dataStore.getEntries().size() - 1).getTags().get(3);
+
+        Assert.assertEquals(firstTag, "bob");
+        Assert.assertEquals(lastTag, "bob4");
 
     }
 }
