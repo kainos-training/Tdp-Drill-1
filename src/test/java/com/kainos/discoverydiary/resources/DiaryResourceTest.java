@@ -32,6 +32,7 @@ public class DiaryResourceTest {
         int projectId = 1;
         final String projectName = "Test project name";
         final String projectDescription = "Test project desc";
+
         dataStore.AddProject(new Project(projectId, projectName, projectDescription));
 
         SessionType sessionType = SessionType.NFRs;
@@ -40,14 +41,51 @@ public class DiaryResourceTest {
         String startTime = "16:00:00";
         String sessionGoal = "Test 1";
 
-        // Act
         DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal);
         dataStore.addDiaryEntry(diaryEntry);
 
+        // Act
         DiaryEntryListView returnedView = (DiaryEntryListView) diaryResource.listDiaryEntries(projectId);
         List<DiaryEntry> entries = returnedView.getEntries();
 
         // Assert
         Assert.assertTrue(entries.contains(diaryEntry));
+    }
+
+    @Test
+    public void listDiaryEntries_whenOlderDiaryEntryAdded_entriesShouldBeReordered() {
+        // Arrange
+        int projectId = 1;
+        final String projectName = "Test project name";
+        final String projectDescription = "Test project desc";
+
+        dataStore.AddProject(new Project(projectId, projectName, projectDescription));
+
+        // Add first, newer data entry
+        SessionType sessionType = SessionType.NFRs;
+        String title1 = "Data Entry 1";
+        String startDate = "18/06/2016";
+        String startTime = "16:00:00";
+        String sessionGoal = "Test 1";
+
+        DiaryEntry diaryEntry1 = new DiaryEntry(sessionType, title1, startDate, startTime, sessionGoal);
+        dataStore.addDiaryEntry(diaryEntry1);
+
+        // Add second, older data entry
+        sessionType = SessionType.NFRs;
+        String title2 = "Data Entry 2";
+        startDate = "10/06/2016";
+        startTime = "16:00:00";
+        sessionGoal = "Test 1";
+
+        DiaryEntry diaryEntry2 = new DiaryEntry(sessionType, title2, startDate, startTime, sessionGoal);
+        dataStore.addDiaryEntry(diaryEntry2);
+
+        // Act
+        DiaryEntryListView returnedView = (DiaryEntryListView) diaryResource.listDiaryEntries(projectId);
+        List<DiaryEntry> entries = returnedView.getEntries();
+
+        // Assert
+        Assert.assertEquals(entries.get(0).getTitle(), title2);
     }
 }
