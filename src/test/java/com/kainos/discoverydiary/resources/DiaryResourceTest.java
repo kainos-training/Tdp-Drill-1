@@ -73,7 +73,7 @@ public class DiaryResourceTest {
 
         // Add second, older data entry
         sessionType = SessionType.NFRs;
-        String title2 = "Data Entry 2";
+        String title2 = "NFR workshop";
         startDate = "10/06/2016";
         startTime = "16:00:00";
         sessionGoal = "Test 1";
