@@ -24,9 +24,11 @@ public class DiaryEntryTest {
         String startTime = "16:00:00";
         String sessionGoal = "Test 1";
         String imageUrl="";
+        int projectId = 1;
 
         // Act
-        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, imageUrl);
+        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, projectId, imageUrl);
+
 
         // Assert
         Assert.assertEquals(diaryEntry.getTitle(), title);
@@ -35,5 +37,6 @@ public class DiaryEntryTest {
         Assert.assertEquals(diaryEntry.getSessionGoal(), sessionGoal);
         Assert.assertEquals(diaryEntry.getSessionType(), sessionType);
         Assert.assertEquals(diaryEntry.getImageUrl(), diaryEntry.DEFAULT_IMAGE_URL);
+        Assert.assertEquals(diaryEntry.getProjectID(), projectId);
     }
 }

@@ -39,8 +39,10 @@ public class DiaryResourceTest {
         String startTime = "16:00:00";
         String sessionGoal = "Test 1";
         String imageUrl = "";
+        
+        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal,
+                projectId, imageUrl);
 
-        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, imageUrl);
         dataStore.addDiaryEntry(diaryEntry);
 
         // Act
@@ -68,7 +70,9 @@ public class DiaryResourceTest {
         String sessionGoal = "Test 1";
         String imageUrl = "";
 
-        DiaryEntry diaryEntry1 = new DiaryEntry(sessionType, title1, startDate, startTime, sessionGoal, imageUrl);
+
+        DiaryEntry diaryEntry1 = new DiaryEntry(sessionType, title1, startDate, startTime, sessionGoal,
+                projectId, imageUrl);
         dataStore.addDiaryEntry(diaryEntry1);
 
         // Add second, older data entry
@@ -78,7 +82,8 @@ public class DiaryResourceTest {
         startTime = "16:00:00";
         sessionGoal = "Test 1";
 
-        DiaryEntry diaryEntry2 = new DiaryEntry(sessionType, title2, startDate, startTime, sessionGoal,"");
+        DiaryEntry diaryEntry2 = new DiaryEntry(sessionType, title2, startDate, startTime, sessionGoal,
+                projectId, imageUrl);
         dataStore.addDiaryEntry(diaryEntry2);
 
         // Act

@@ -16,15 +16,18 @@ public class DiaryEntry {
     private String startTime;
     private String sessionGoal;
     private String imageUrl;
+    private int projectID;
 
 
-    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal, String imageUrl) {
+    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal,
+                      int projectID, String imageUrl) {
         this.sessionType = sessionType;
         this.title = title;
         this.startDate = startDate;
         this.startTime = startTime;
         this.sessionGoal = sessionGoal;
         this.imageUrl = imageUrl;
+        this.projectID = projectID;
     }
 
     public SessionType getSessionType() {
@@ -71,10 +74,19 @@ public class DiaryEntry {
         DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
         return DateTime.parse(startDate+ " "+startTime, formatter);
     }
+
     public String getImageUrl() {
-        if(imageUrl.equals(""))
+        if (imageUrl.equals(""))
             return DEFAULT_IMAGE_URL;
-       else
+        else
             return imageUrl;
+    }
+
+    public int getProjectID() {
+        return projectID;
+    }
+
+    public void setProjectID(int projectID) {
+        this.projectID = projectID;
     }
 }
