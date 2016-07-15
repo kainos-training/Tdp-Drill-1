@@ -56,9 +56,9 @@ public class DataStore {
 
 	// Dummy date for diary entries
 	static {
-		entries.add(new DiaryEntry(SessionType.VISION, "Diary Entry 1", "18/06/2016", "16:00:00", "Test 1"));
-		entries.add(new DiaryEntry(SessionType.GOALS, "Diary Entry 2",  "21/06/2016", "17:00:00", "Test 2"));
-		entries.add(new DiaryEntry(SessionType.NFRs, "Diary Entry 3", "02/06/2016", "18:00:00", "Test 3"));
+		entries.add(new DiaryEntry(SessionType.VISION, "Vision workshop", "18/06/2016", "16:00:00", "Create the vision statement for the new service."));
+		entries.add(new DiaryEntry(SessionType.GOALS, "Goals workshop",  "21/06/2016", "17:00:00", "Agree what the goals will be for the new service"));
+		entries.add(new DiaryEntry(SessionType.NFRs, "NFR workshop", "02/06/2016", "14:00:00", "To agree non-functional goals for the porject."));
 	}
 
 	public void addDiaryEntry(DiaryEntry diaryEntry) { entries.add(diaryEntry); }
