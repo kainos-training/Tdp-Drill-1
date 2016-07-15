@@ -92,7 +92,13 @@ label small {
 }
 ​
 textarea {
-	min-height: 135px;
+    min-height: 135px;
+}
+
+.sessionGoalTextArea {
+    resize: none;
+    width: 100%;
+    height: 100px;
 }
 ​
 .form-group {
@@ -281,6 +287,32 @@ textarea {
 	padding-right: 25px;
 }
 
+label.error {
+
+    font-weight: bold;
+
+    color: red;
+
+    padding: 2x 8px;
+
+    margin-top: 10px;
+
+}
+
+label.valid {
+
+
+    font-weight: bold;
+
+    color: green;
+
+    padding: 2x 8px;
+
+    margin-top: 10px;
+
+
+}
+
 @media screen and (max-width: 767px) {
 	
 	nav.navbar {
@@ -322,3 +354,4 @@ textarea {
 	}
 	
 }
+

@@ -10,6 +10,7 @@
     <title>Discovery Diary</title>
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
+
   </head>
   <body>
 
@@ -31,6 +32,7 @@
       <#nested/>
 
     </div><!-- /.container -->
+
   </body>
 </html>
 </#macro>

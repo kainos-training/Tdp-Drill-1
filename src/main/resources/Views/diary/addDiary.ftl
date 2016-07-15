@@ -7,24 +7,12 @@
 <h1>Add new diary entry</h1>
 <p class="lead">Please ensure accurate information is provided below before attempting to add this new diary entry.</p>
 ​
-<form enctype="multipart/form-data" action="#" method="post" autocomplete="off">
+<form id="myForm" class="form-horizontal" autocomplete="off">
 
-    <#if errors??>
-        <div class="bg-danger text-danger">
-            <ul>
-            <#list errors as error>
-                <li>
-                    ${error}
-                </li>
-            </#list>
-            </ul>
-        </div>
-    </#if>
-
-    <div class="form-group">
+   <div class="form-group">
         <label for="title">Title</label>
-        <input name="title" id="title" type="text" placeholder="Title" class="form-control" required />
-    </div>
+        <input name="title" id="title" type="text" placeholder="Title" class="form-control" data-error="Cannot be null" required />
+   </div>
     ​
     <div class="form-group">
         <label for="category">Category</label> <br/>
@@ -56,14 +44,17 @@
     ​
     <div class="form-group">
         <label for="sessionGoal">Session goal</label>
-        <textarea name="sessionGoal" id="sessionGoal" placeholder="Enter text here..." class="form-control" required></textarea>
+        <textarea name="sessionGoal" id="sessionGoal" data-role="none" placeholder="Enter text here..." class="form-control sessionGoalTextArea" required></textarea>
     </div>
     ​
     ​
     <input type="submit" value="Save diary entry" class="btn btn-primary" />
-    <a class="btn btn-default" href="#">Cancel</a>
     ​
 </form>
 </div>
+    <script src="/assets/js/jquery-1.7.1.min.js"></script>
 
+    <script src="/assets/js/jquery.validate.js"></script>
+
+    <script src="/assets/js/script.js"></script>
 </@layoutTemplate.layout>
