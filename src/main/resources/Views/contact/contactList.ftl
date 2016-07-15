@@ -2,14 +2,17 @@
 
 <@layoutTemplate.layout>
 
-    <#list people as person>
-      <@person fullName="${person.fullName}" jobTitle="${person.jobTitle}" company="${person.company}" email="${person.email}" number="${person.number}" mobile=${person.mobile} />
+    <#list contacts as contact>
+      <@contact fullName="${contact.fullName}" jobTitle="${contact.jobTitle}" company="${contact.company}" email="${contact.email}" number="${contact.number}" mobile=${contact.mobile} />
     </#list>
 
 </@layoutTemplate.layout>
 
-<#macro person fullName jobTitle company email number mobile>
-  <div class="person">
+<ul>
+<li>
+<#macro contact fullName jobTitle company email number mobile>
+  <div class="contact">
+
 
     <div class="content">
       <h3 class="title">${fullName}</h3>
@@ -22,3 +25,5 @@
 
   </div>
 </#macro>
+</li>
+<ul>
