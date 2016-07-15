@@ -37,7 +37,7 @@ public class DiaryResourceTest {
         SessionType sessionType = SessionType.NFRs;
         String title = "Test Data Entry";
         String startDate = "18/06/2016";
-        String startTime = "16:00:00";
+        String startTime = "16:00";
         String sessionGoal = "Test 1";
         String imageUrl = "";
         
@@ -67,7 +67,7 @@ public class DiaryResourceTest {
         SessionType sessionType = SessionType.NFRs;
         String title1 = "Data Entry 1";
         String startDate = "18/06/2016";
-        String startTime = "16:00:00";
+        String startTime = "16:00";
         String sessionGoal = "Test 1";
         String imageUrl = "";
 
@@ -80,7 +80,7 @@ public class DiaryResourceTest {
         sessionType = SessionType.NFRs;
         String title2 = "NFR workshop";
         startDate = "10/06/2016";
-        startTime = "16:00:00";
+        startTime = "11:00";
         sessionGoal = "Test 1";
 
         DiaryEntry diaryEntry2 = new DiaryEntry(sessionType, title2, startDate, startTime, sessionGoal,

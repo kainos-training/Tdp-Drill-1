@@ -19,6 +19,7 @@
 
     <#list entries as entry>
       <@diaryEntry
+        diaryId="${entry.diaryId}"
         title="${entry.title}"
         sessionType="${entry.sessionType}"
         date="${entry.startDate}"
@@ -28,12 +29,20 @@
          />
     </#list>
 
+    <#if !entries?has_content>
+        <div class="diary">
+          <div class="content">
+            <h3 class="title nocontent">No diary entries have been added.</h3>
+          </div>
+        </div>
+        </#if>
+
     <a href="/project/${project.id}/diary/add" class="btn btn-primary">Add diary entry</a>
 
 </@layoutTemplate.layout>
 
-<#macro diaryEntry title sessionType date time goal imageUrl>
-  <div class="diary">
+<#macro diaryEntry diaryId title sessionType date time goal imageUrl>
+  <a href="/project/${project.id}/diary/${diaryId}"><div class="diary">
 
     <div class="content clearfix">
 
@@ -59,5 +68,5 @@
 
     </div>
 
-  </div>
+  </div></a>
 </#macro>

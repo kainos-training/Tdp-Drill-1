@@ -4,12 +4,10 @@ import com.google.common.collect.Lists;
 import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Person;
 import com.kainos.discoverydiary.models.Project;
-import com.kainos.discoverydiary.models.SessionType;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.UUID;
 
 public class DataStore {
 
@@ -18,6 +16,8 @@ public class DataStore {
 	private static List<Project> projects = Lists.newArrayList();
 
 	private static List<Person> contacts = Lists.newArrayList();
+
+	private static int lastUsedDiaryId = 0;
 
 
 	public List<Person> getPeople() {
@@ -84,7 +84,27 @@ public class DataStore {
 
 	private static List<DiaryEntry> entries = Lists.newArrayList();
 
-	public void addDiaryEntry(DiaryEntry diaryEntry) { entries.add(diaryEntry); }
+	public int addDiaryEntry(DiaryEntry diaryEntry)
+	{
+		lastUsedDiaryId++;
+		diaryEntry.setDiaryId(lastUsedDiaryId);
+		entries.add(diaryEntry);
+
+		return lastUsedDiaryId;
+	}
+
+	public DiaryEntry getEntry(int diaryEntryId){
+		DiaryEntry result = null;
+
+		for(DiaryEntry entry : entries){
+			if(entry.getDiaryId() == diaryEntryId){
+				result = entry;
+				break;
+			}
+		}
+
+		return result;
+	}
 
 	public List<DiaryEntry> getEntries(int projectId) {
 		// return only entries for the current project
