@@ -56,8 +56,16 @@ public class DataStore {
 
 	public void addDiaryEntry(DiaryEntry diaryEntry) { entries.add(diaryEntry); }
 
-	public List<DiaryEntry> getEntries() {
-		Collections.sort(entries, new Comparator<DiaryEntry>() {
+	public List<DiaryEntry> getEntries(int projectId) {
+		// return only entries for the current project
+		List<DiaryEntry> entriesForProject = Lists.newArrayList();
+
+		for (DiaryEntry entry : entries) {
+			if (entry.getProjectID() == projectId)
+				entriesForProject.add(entry);
+		}
+
+		Collections.sort(entriesForProject, new Comparator<DiaryEntry>() {
 			@Override
 			public int compare(DiaryEntry z1, DiaryEntry z2) {
 				if (z1.getSessionDateAndTime().isAfter(z2.getSessionDateAndTime()))
@@ -68,6 +76,6 @@ public class DataStore {
 			}
 		});
 
-		return entries;
+		return entriesForProject;
 	}
 }

@@ -13,13 +13,16 @@ public class DiaryEntry {
     private String startDate;
     private String startTime;
     private String sessionGoal;
+    private int projectID;
 
-    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal) {
+    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal,
+                      int projectID) {
         this.sessionType = sessionType;
         this.title = title;
         this.startDate = startDate;
         this.startTime = startTime;
         this.sessionGoal = sessionGoal;
+        this.projectID = projectID;
     }
 
     public SessionType getSessionType() {
@@ -65,5 +68,13 @@ public class DiaryEntry {
     public DateTime getSessionDateAndTime(){
         DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
         return DateTime.parse(startDate+ " "+startTime, formatter);
+    }
+
+    public int getProjectID() {
+        return projectID;
+    }
+
+    public void setProjectID(int projectID) {
+        this.projectID = projectID;
     }
 }

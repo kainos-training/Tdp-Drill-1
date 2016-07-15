@@ -27,7 +27,7 @@ public class DiaryResource {
     @GET
     public View listDiaryEntries(@PathParam("projectId") int projectId) {
         Project project = dataStore.getProject(projectId);
-        List<DiaryEntry> entries = dataStore.getEntries();
+        List<DiaryEntry> entries = dataStore.getEntries(projectId);
         
         return new DiaryEntryListView(entries, project);
     }
