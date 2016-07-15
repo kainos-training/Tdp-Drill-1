@@ -6,6 +6,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -81,8 +82,9 @@ public class DiaryEntry {
         return DateTime.parse(startDate+ " "+startTime, formatter);
     }
 
-    public String getTags() {
-        return tags;
+    public List<String> getTags() {
+        List<String> seperatedTags = Arrays.asList(tags.split(", "));
+        return seperatedTags;
     }
 
     public void setTags(String tags) {

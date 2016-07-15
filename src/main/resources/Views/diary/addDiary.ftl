@@ -50,6 +50,11 @@
         <textarea name="sessionGoal" id="sessionGoal" data-role="none" data-error="Enter session goal" placeholder="Enter text here..." class="form-control sessionGoalTextArea" required></textarea>
         <div class="help-block with-errors"></div>
     </div>
+
+    <div class="form-group">
+        <label for=tags"">Tags</label>
+        <input type="text" id="tags" name="tags" placeholder="Tags, must be comma seperated" class="form-control" value="">
+    </div>
     ​
     ​
     <input type="submit" value="Save diary entry" class="btn btn-primary" />

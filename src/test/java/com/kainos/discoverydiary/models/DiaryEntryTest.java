@@ -34,4 +34,20 @@ public class DiaryEntryTest {
         Assert.assertEquals(diaryEntry.getSessionGoal(), sessionGoal);
         Assert.assertEquals(diaryEntry.getSessionType(), sessionType);
     }
+
+    @Test
+    public void returns_list_of_tags(){
+
+        SessionType sessionType = SessionType.NFRs;
+        String title = "Test Data Entry";
+        String startDate = "18/06/2016";
+        String startTime = "16:00:00";
+        String sessionGoal = "Test 1";
+
+        // Act
+        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, startDate, startTime, sessionGoal, "bob, bob2, bob3, bob4");
+
+        Assert.assertEquals(diaryEntry.getTags().get(0), "bob");
+
+    }
 }
