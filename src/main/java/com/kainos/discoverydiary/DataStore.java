@@ -61,6 +61,8 @@ public class DataStore {
 		entries.add(new DiaryEntry(SessionType.NFRs, "Diary Entry 3", "02/06/2016", "18:00:00", "Test 3"));
 	}
 
+	public void addDiaryEntry(DiaryEntry diaryEntry) { entries.add(diaryEntry); }
+
 	public List<DiaryEntry> getEntries() {
 		Collections.sort(entries, new Comparator<DiaryEntry>() {
 			@Override

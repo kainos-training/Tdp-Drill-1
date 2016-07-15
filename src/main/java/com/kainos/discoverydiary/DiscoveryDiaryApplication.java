@@ -31,7 +31,7 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         dataStore.AddProject(new Project(2, "Scottish Courts", "Scottish court service to allow management of cases"));
         final PeopleResource peopleResource = new PeopleResource(dataStore, discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(dataStore);
-        final DiaryResource diaryResource = new DiaryResource(dataStore, discoveryDiaryConfiguration);
+        final DiaryResource diaryResource = new DiaryResource(dataStore);
 
         environment.jersey().register(peopleResource);
         environment.jersey().register(diaryResource);
