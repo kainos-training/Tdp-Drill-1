@@ -7,44 +7,50 @@
 <h1>Add new diary entry</h1>
 <p class="lead">Please ensure accurate information is provided below before attempting to add this new diary entry.</p>
 ​
-<form id="myForm" class="form-horizontal" autocomplete="off">
+<form id="myForm" class="form-horizontal" autocomplete="off" data-toggle="validator">
 
    <div class="form-group">
         <label for="title">Title</label>
-        <input name="title" id="title" type="text" placeholder="Title" class="form-control" data-error="Cannot be null" required />
+        <input name="title" id="title" type="text" placeholder="Title" class="form-control" data-error="Enter title" required />
+        <div class="help-block with-errors"></div>
    </div>
     ​
     <div class="form-group">
         <label for="category">Category</label> <br/>
-        <select id="category" class="form-control" required>
-            <option class="form-control" value="" disabled selected>Select a catergory...</option>
+        <select id="category" class="form-control" data-error="Select catergory" required>
+            <option class="form-control" value="" disabled selected>Select catergory</option>
             <option class="form-control" value="vision">Vision</option>
             <option class="form-control" value="goals">Goals</option>
             <option class="form-control" value="mercedes">User story creation</option>
             <option class="form-control" value="nfrs">NFRs</option>
             <option class="form-control" value="other">Other</option>
         </select>
+        <div class="help-block with-errors"></div>
     </div>
     ​
     <div class="form-group">
         <label for="date">Date</label>
-        <input name="date" id="date" type="text" placeholder="dd//mm//yyyy" class="form-control" required />
+        <input name="date" id="date" type="text" placeholder="dd//mm//yyyy" data-error="Enter date" class="form-control" required />
+        <div class="help-block with-errors"></div>
     </div>
     ​
     ​
     <div class="form-group">
         <label for="startTime">Start time</label>
-        <input name="startTime" id="startTime" type="text" placeholder="08:00 - 24hr clock" class="form-control" required />
+        <input name="startTime" id="startTime" type="text" placeholder="08:00 - 24hr clock" data-error="Enter start time" class="form-control" required />
+        <div class="help-block with-errors"></div>
     </div>
     ​
     <div class="form-group">
         <label for="endTime">End time</label>
-        <input name="endTime" id="endTime" type="text" placeholder="08:00 - 24hr clock" class="form-control" required />
+        <input name="endTime" id="endTime" type="text" placeholder="08:00 - 24hr clock" data-error="Enter end time" class="form-control" required />
+        <div class="help-block with-errors"></div>
     </div>
     ​
     <div class="form-group">
         <label for="sessionGoal">Session goal</label>
-        <textarea name="sessionGoal" id="sessionGoal" data-role="none" placeholder="Enter text here..." class="form-control sessionGoalTextArea" required></textarea>
+        <textarea name="sessionGoal" id="sessionGoal" data-role="none" data-error="Enter session goal" placeholder="Enter text here..." class="form-control sessionGoalTextArea" required></textarea>
+        <div class="help-block with-errors"></div>
     </div>
     ​
     ​
@@ -52,9 +58,7 @@
     ​
 </form>
 </div>
-    <script src="/assets/js/jquery-1.7.1.min.js"></script>
 
-    <script src="/assets/js/jquery.validate.js"></script>
 
-    <script src="/assets/js/script.js"></script>
+
 </@layoutTemplate.layout>
