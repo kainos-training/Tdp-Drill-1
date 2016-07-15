@@ -37,6 +37,7 @@ public class ProjectResourceTest {
         assertTrue(result.getProject().getId() == 1);
         assertTrue(result.getProject().getName() == projectName);
         assertTrue(result.getProject().getDescription() == projectDescription);
+        assertTrue(result.getTemplateName() == "/Views/project/view.ftl");
     }
 
 }
