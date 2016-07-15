@@ -54,6 +54,13 @@ public class DataStore {
 
 	private static List<DiaryEntry> entries = Lists.newArrayList();
 
+	// Dummy date for diary entries
+	static {
+		entries.add(new DiaryEntry(SessionType.VISION, "Vision workshop", "18/06/2016", "16:00:00", "Create the vision statement for the new service."));
+		entries.add(new DiaryEntry(SessionType.GOALS, "Goals workshop",  "21/06/2016", "17:00:00", "Agree what the goals will be for the new service"));
+		entries.add(new DiaryEntry(SessionType.NFRs, "NFR workshop", "02/06/2016", "14:00:00", "To agree non-functional goals for the porject."));
+	}
+
 	public void addDiaryEntry(DiaryEntry diaryEntry) { entries.add(diaryEntry); }
 
 	public List<DiaryEntry> getEntries() {
