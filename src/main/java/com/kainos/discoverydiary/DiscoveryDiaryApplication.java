@@ -2,12 +2,9 @@ package com.kainos.discoverydiary;
 
 import com.github.dirkraft.dropwizard.fileassets.FileAssetsBundle;
 import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
-import com.kainos.discoverydiary.models.Person;
-import com.kainos.discoverydiary.models.DiaryEntry;
-import com.kainos.discoverydiary.models.SessionType;
-import com.kainos.discoverydiary.resources.DiaryResource;
 import com.kainos.discoverydiary.models.Project;
 import com.kainos.discoverydiary.resources.ContactResource;
+import com.kainos.discoverydiary.resources.DiaryResource;
 import com.kainos.discoverydiary.resources.PeopleResource;
 import com.kainos.discoverydiary.resources.ProjectResource;
 import io.dropwizard.Application;
@@ -39,20 +36,10 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         dataStore.addContact(1, 2, "Adam Kane", "Graduate Software Engineer", "Kainos",
                 "a.kane@kainos.com", "02878473829", "07794872838");
 
-        dataStore.addDiaryEntry(new DiaryEntry(SessionType.VISION, "Vision workshop", "18/06/2016", "16:00:00", "Create the vision statement for the new service.", 1, ""));
-        dataStore.addDiaryEntry(new DiaryEntry(SessionType.GOALS, "Goals workshop",  "21/06/2016", "17:00:00", "Agree what the goals will be for the new service", 1, ""));
-        dataStore.addDiaryEntry(new DiaryEntry(SessionType.NFRs, "NFR workshop", "02/06/2016", "14:00:00", "To agree non-functional goals for the project.", 1, ""));
-
         final PeopleResource peopleResource = new PeopleResource(dataStore, discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(dataStore);
         final ContactResource contactResource = new ContactResource(dataStore);
         final DiaryResource diaryResource = new DiaryResource(dataStore);
-
-
-        dataStore.addDiaryEntry(new DiaryEntry(SessionType.VISION, "Diary Entry 1", "18/06/2016", "16:00:00", "Session goal 1", 1, ""));
-        dataStore.addDiaryEntry(new DiaryEntry(SessionType.GOALS, "Diary Entry 2",  "21/06/2016", "17:00:00", "Session goal 2", 1, ""));
-        dataStore.addDiaryEntry(new DiaryEntry(SessionType.NFRs, "Diary Entry 3", "02/06/2016", "18:00:00", "Session goal 3", 1, ""));
-
 
         environment.jersey().register(peopleResource);
         environment.jersey().register(diaryResource);
