@@ -4,6 +4,25 @@ body {
   padding-bottom: 80px;
 }
 
+.button-small {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 4px;
+}
+​
+.button-group {
+  margin-top: 30px;
+  display: inline-block;
+}
+​
+.button-group .single {
+  margin-left: 0px;
+}
+​
+.button-group a {
+  margin-left: 20px;
+}
+
 div.pre-nav {
   padding: 40px 0px;
   background: #fff;
@@ -114,24 +133,7 @@ textarea {
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 ​
-.button-small {
-  border: none;
-  padding: 15px 25px;
-  border-radius: 4px;
-}
-​
-.button-group {
-  margin-top: 30px;
-  display: inline-block;
-}
-​
-.button-group .single {
-  margin-left: 0px;
-}
-​
-.button-group a {
-  margin-left: 20px;
-}
+
 ​
 .link {
   border: none;
