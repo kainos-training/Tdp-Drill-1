@@ -8,28 +8,36 @@ import org.joda.time.format.DateTimeFormatter;
  * DiaryEntry object
  */
 public class DiaryEntry {
+
+    final String DEFAULT_IMAGE_URL="http://i.imgur.com/BbpaP7N.png";
     private SessionType sessionType;
     private String title;
     private String startDate;
     private String startTime;
     private String sessionGoal;
-    private int diaryId;
+    private String imageUrl;
+    private int projectID;
 
-    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal) {
-
+    
+    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal,
+                      int projectID) {
         this.sessionType = sessionType;
         this.title = title;
         this.startDate = startDate;
         this.startTime = startTime;
         this.sessionGoal = sessionGoal;
+        this.projectID = projectID;
     }
 
-    public int getDiaryId() {
-        return diaryId;
-    }
-
-    public void setDiaryId(int id) {
-        this.diaryId = id;
+    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal,
+                      int projectID, String imageUrl) {
+        this.sessionType = sessionType;
+        this.title = title;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.sessionGoal = sessionGoal;
+        this.imageUrl = imageUrl;
+        this.projectID = projectID;
     }
 
     public SessionType getSessionType() {
@@ -73,7 +81,22 @@ public class DiaryEntry {
     }
 
     public DateTime getSessionDateAndTime(){
-        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
         return DateTime.parse(startDate+ " "+startTime, formatter);
+    }
+
+    public String getImageUrl() {
+        if (imageUrl.equals(""))
+            return DEFAULT_IMAGE_URL;
+        else
+            return imageUrl;
+    }
+
+    public int getProjectID() {
+        return projectID;
+    }
+
+    public void setProjectID(int projectID) {
+        this.projectID = projectID;
     }
 }

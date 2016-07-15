@@ -28,7 +28,7 @@
     ​
     <div class="form-group">
         <label for="date">Date</label>
-        <input name="date" id="date" type="text" placeholder="dd/mm/yyyy" data-error="Enter date" class="form-control" required />
+        <input name="date" id="date" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" type="text" placeholder="dd/mm/yyyy" data-error="Enter date in format dd/mm/yyyy" class="form-control" required />
         <div class="help-block with-errors"></div>
     </div>
     ​
@@ -50,6 +50,12 @@
         <textarea name="sessionGoal" id="sessionGoal" data-role="none" data-error="Enter session goal" placeholder="Enter text here..." class="form-control sessionGoalTextArea" required></textarea>
         <div class="help-block with-errors"></div>
     </div>
+
+    <div class="form-group">
+            <label for="sessionGoal">Image</label>
+            <textarea name="imageUrl" id="imageUrl" data-role="none" placeholder="Enter image url..." class="form-control sessionGoalTextArea"></textarea>
+            <div class="help-block with-errors"></div>
+        </div>
     ​
     ​
     <input type="submit" value="Save diary entry" class="btn btn-primary" />
