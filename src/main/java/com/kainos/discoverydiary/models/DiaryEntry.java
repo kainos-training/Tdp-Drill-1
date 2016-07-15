@@ -73,7 +73,7 @@ public class DiaryEntry {
     }
 
     public DateTime getSessionDateAndTime(){
-        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm");
         return DateTime.parse(startDate+ " "+startTime, formatter);
     }
 }
