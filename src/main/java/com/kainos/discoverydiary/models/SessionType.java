@@ -6,7 +6,7 @@ package com.kainos.discoverydiary.models;
 public enum SessionType {
     VISION("Vision"), GOALS("Goals"), USER_STORY_CREATION("User Story Creation"), NFRs("NFRs"), OTHER("Other");
 
-    String name;
+    public String name;
 
     SessionType(String name){
         this.name = name;
