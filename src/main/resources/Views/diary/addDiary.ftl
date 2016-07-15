@@ -1,8 +1,6 @@
 <#import "../layout.ftl" as layoutTemplate>
 <@layoutTemplate.layout>
 
-<a href="/project">Project</a>
-
 <div class="container panel-box">
 <h1>Add new diary entry</h1>
 <p class="lead">Please ensure accurate information is provided below before attempting to add this new diary entry.</p>

@@ -13,6 +13,8 @@
         goal="${entry.sessionGoal}" />
     </#list>
 
+    <a href="/project/${project.id}/diary/add" class="btn btn-primary">Add diary entry</a>
+
 </@layoutTemplate.layout>
 
 <#macro diaryEntry title sessionType date time goal>
