@@ -62,4 +62,8 @@
     <script src="/assets/js/jquery-3.1.0.min.js"></script>
     <script src="/assets/js/validator.js"</script>
 
+    <script>
+        $("#myForm").validator();
+    </script>
+
 </@layoutTemplate.layout>

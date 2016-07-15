@@ -2,9 +2,16 @@
 
 <@layoutTemplate.layout>
 
+
+
     <#list entries as entry>
       <@diaryEntry title="${entry.title}" sessionType="${entry.sessionType}" date="${entry.startDate}" time="${entry.startTime}" goal="${entry.sessionGoal}" />
     </#list>
+
+    <br/>
+    <br/>
+    <a href="/project/${project.id}/diary/add/" class="btn btn-primary">New diary entry</a>
+
 
 </@layoutTemplate.layout>
 
