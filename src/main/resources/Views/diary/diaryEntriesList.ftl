@@ -2,6 +2,8 @@
 
 <@layoutTemplate.layout>
 
+    <h2 class="pageTitle">Diary entries</h2>
+
     <#list entries as entry>
       <@diaryEntry
         title="${entry.title}"
