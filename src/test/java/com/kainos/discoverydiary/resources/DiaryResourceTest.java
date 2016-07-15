@@ -1,5 +1,6 @@
 package com.kainos.discoverydiary.resources;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.kainos.discoverydiary.DataStore;
 import com.kainos.discoverydiary.models.DiaryEntry;
 import com.kainos.discoverydiary.models.Project;
@@ -92,5 +93,8 @@ public class DiaryResourceTest {
 
         // Assert
         Assert.assertEquals(entries.get(0).getTitle(), title2);
+        Assert.assertEquals(entries.get(0).getImageUrl(),imageUrl);
+        Assert.assertEquals(entries.get(1).getImageUrl(),imageUrl);
+
     }
 }
