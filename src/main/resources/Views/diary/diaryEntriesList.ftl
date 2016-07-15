@@ -1,8 +1,21 @@
 <#import "../layout.ftl" as layoutTemplate>
 
 <@layoutTemplate.layout>
-
-    <h2 class="pageTitle">Diary entries</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="pageTitle">Diary entries</h2>
+        </div>
+        <div class="col-md-4 diary_bottom">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter tag">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Search</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <#list entries as entry>
       <@diaryEntry
