@@ -19,6 +19,7 @@
 
     <#list entries as entry>
       <@diaryEntry
+        diaryId="${entry.diaryId}"
         title="${entry.title}"
         sessionType="${entry.sessionType}"
         date="${entry.startDate}"
@@ -32,8 +33,8 @@
 
 </@layoutTemplate.layout>
 
-<#macro diaryEntry title sessionType date time goal imageUrl>
-  <div class="diary">
+<#macro diaryEntry diaryId title sessionType date time goal imageUrl>
+  <a href="/project/${project.id}/diary/${diaryId}"><div class="diary">
 
     <div class="content clearfix">
 
@@ -59,5 +60,5 @@
 
     </div>
 
-  </div>
+  </div></a>
 </#macro>

@@ -39,10 +39,12 @@ public class DiaryResource {
     @Path("{projectId}/diary/{diaryId}")
     @GET
     public View Diary(@PathParam("projectId") int projectId, @PathParam("diaryId") int diaryId){
-        DiaryEntry entry = dataStore.getEntry(diaryId);
+        System.out.println("diaryId =" +diaryId);
+        DiaryEntry diaryEntry = dataStore.getEntry(diaryId);
+        System.out.println(diaryEntry != null);
         Project project = dataStore.getProject(projectId);
 
-        return new DiaryReadOnlyView(entry, project);
+        return new DiaryReadOnlyView(diaryEntry, project);
     }
     @Path("{projectId}/diary/add")
     @GET
@@ -63,7 +65,8 @@ public class DiaryResource {
                           @FormDataParam("date") String date,
                           @FormDataParam("startTime") String startTime,
                           @FormDataParam("endTime") String endTime,
-                          @FormDataParam("sessionGoal") String sessionGoal) {
+                          @FormDataParam("sessionGoal") String sessionGoal,
+                          @FormDataParam("imageUrl") String imageUrl) {
 
 
         Project project = dataStore.getProject(projectId);
@@ -86,10 +89,11 @@ public class DiaryResource {
             sessionType = SessionType.OTHER;
         }
 
-        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, date, startTime, sessionGoal);
+        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, date, startTime, sessionGoal, projectId, imageUrl);
 
         dataStore.addDiaryEntry(diaryEntry);
 
+        System.out.println(diaryEntry.getDiaryId());
         return new DiaryReadOnlyView(diaryEntry, project);
 
     }

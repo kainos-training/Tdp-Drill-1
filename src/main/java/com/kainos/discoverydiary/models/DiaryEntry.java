@@ -11,6 +11,7 @@ public class DiaryEntry {
 
     final String DEFAULT_IMAGE_URL="http://i.imgur.com/BbpaP7N.png";
     private SessionType sessionType;
+    private int diaryId;
     private String title;
     private String startDate;
     private String startTime;
@@ -38,6 +39,14 @@ public class DiaryEntry {
         this.sessionGoal = sessionGoal;
         this.imageUrl = imageUrl;
         this.projectID = projectID;
+    }
+
+    public int getDiaryId() {
+        return  diaryId;
+    }
+
+    public void setDiaryId(int diaryId) {
+        this.diaryId = diaryId;
     }
 
     public SessionType getSessionType() {
@@ -81,7 +90,7 @@ public class DiaryEntry {
     }
 
     public DateTime getSessionDateAndTime(){
-        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm");
         return DateTime.parse(startDate+ " "+startTime, formatter);
     }
 

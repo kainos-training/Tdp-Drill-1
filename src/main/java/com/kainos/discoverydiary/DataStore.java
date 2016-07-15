@@ -96,7 +96,7 @@ public class DataStore {
 	public DiaryEntry getEntry(int diaryEntryId){
 		DiaryEntry result = null;
 
-		for(DiaryEntry entry : getEntries()){
+		for(DiaryEntry entry : entries){
 			if(entry.getDiaryId() == diaryEntryId){
 				result = entry;
 				break;

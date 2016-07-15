@@ -80,7 +80,7 @@ public class DiaryResourceTest {
         sessionType = SessionType.NFRs;
         String title2 = "NFR workshop";
         startDate = "10/06/2016";
-        startTime = "16:00";
+        startTime = "11:00";
         sessionGoal = "Test 1";
 
         DiaryEntry diaryEntry2 = new DiaryEntry(sessionType, title2, startDate, startTime, sessionGoal,
