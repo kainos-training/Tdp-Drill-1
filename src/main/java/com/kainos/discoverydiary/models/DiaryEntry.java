@@ -1,8 +1,12 @@
 package com.kainos.discoverydiary.models;
 
+import com.google.common.collect.Lists;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * DiaryEntry object
@@ -13,6 +17,7 @@ public class DiaryEntry {
     private String startDate;
     private String startTime;
     private String sessionGoal;
+    private String tags;
 
     public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal) {
         this.sessionType = sessionType;
@@ -20,6 +25,15 @@ public class DiaryEntry {
         this.startDate = startDate;
         this.startTime = startTime;
         this.sessionGoal = sessionGoal;
+    }
+
+    public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal, String tags) {
+        this.sessionType = sessionType;
+        this.title = title;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.sessionGoal = sessionGoal;
+        this.tags = tags;
     }
 
     public SessionType getSessionType() {
@@ -65,5 +79,13 @@ public class DiaryEntry {
     public DateTime getSessionDateAndTime(){
         DateTimeFormatter formatter = DateTimeFormat.forPattern("dd/MM/yyyy HH:mm:ss");
         return DateTime.parse(startDate+ " "+startTime, formatter);
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 }
