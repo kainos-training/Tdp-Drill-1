@@ -70,7 +70,6 @@ public class DataStore {
 		for(Person contact : contacts){
 			if(contact.getProjectId() == projectId){
 				result.add(contact);
-				break;
 			}
 		}
 

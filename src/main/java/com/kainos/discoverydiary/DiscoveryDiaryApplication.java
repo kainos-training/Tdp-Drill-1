@@ -32,6 +32,8 @@ public class DiscoveryDiaryApplication extends Application<DiscoveryDiaryConfigu
         dataStore.AddProject(new Project(2, "Scottish Courts", "Scottish court service to allow management of cases"));
         dataStore.addContact(1, 1, "Sean Devlin", "Graduate Software Engineer", "Kainos",
                 "s.devlin2@kainos.com", "02890947271", "07703848293");
+        dataStore.addContact(1, 2, "Adam Kane", "Graduate Software Engineer", "Kainos",
+                "a.kane@kainos.com", "02878473829", "07794872838");
 
         final PeopleResource peopleResource = new PeopleResource(dataStore, discoveryDiaryConfiguration);
         final ProjectResource projectResource = new ProjectResource(dataStore);
