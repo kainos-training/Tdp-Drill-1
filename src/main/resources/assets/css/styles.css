@@ -4,6 +4,17 @@ body {
   padding-bottom: 80px;
 }
 
+.tag{
+
+  background: #efefef;
+  font-size: 14px;
+  padding: 8px 16px 8px 16px;
+  border-radius: 50px;
+  color: #7e7e7e;
+  display: inline-block;
+
+}
+
 .hintText {
   font-size: 12px;
 }

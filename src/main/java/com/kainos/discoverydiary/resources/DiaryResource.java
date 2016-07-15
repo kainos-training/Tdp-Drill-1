@@ -55,7 +55,8 @@ public class DiaryResource {
                           @FormDataParam("date") String date,
                           @FormDataParam("startTime") String startTime,
                           @FormDataParam("endTime") String endTime,
-                          @FormDataParam("sessionGoal") String sessionGoal) {
+                          @FormDataParam("sessionGoal") String sessionGoal,
+                          @FormDataParam("tags") String tags) {
 
 
         Project project = dataStore.getProject(projectId);
@@ -78,7 +79,15 @@ public class DiaryResource {
             sessionType = SessionType.OTHER;
         }
 
-        DiaryEntry diaryEntry = new DiaryEntry(sessionType, title, date, startTime, sessionGoal);
+        DiaryEntry diaryEntry;
+        if (tags.equals("")){
+            diaryEntry = new DiaryEntry(sessionType, title, date, startTime, sessionGoal);
+
+        }else{
+            diaryEntry = new DiaryEntry(sessionType, title, date, startTime, sessionGoal, tags);
+
+        }
+
 
         dataStore.addDiaryEntry(diaryEntry);
 

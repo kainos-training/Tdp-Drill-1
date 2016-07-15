@@ -19,6 +19,7 @@ public class DiaryEntry {
     private String startTime;
     private String sessionGoal;
     private String tags;
+    private int tagsLength;
 
     public DiaryEntry(SessionType sessionType, String title, String startDate, String startTime, String sessionGoal) {
         this.sessionType = sessionType;
@@ -83,11 +84,20 @@ public class DiaryEntry {
     }
 
     public List<String> getTags() {
-        List<String> seperatedTags = Arrays.asList(tags.split(","));
+        List<String> seperatedTags;
+        if (tags != null){
+            seperatedTags = Arrays.asList(tags.split(","));
+        }else{
+            seperatedTags = new ArrayList<>();
+        }
         return seperatedTags;
     }
 
     public void setTags(String tags) {
         this.tags = tags;
+    }
+
+    public int getTagsLength() {
+        return getTags().size();
     }
 }

@@ -26,7 +26,19 @@
     <div class="form-group">
       <label for="sessionGoal">Session goal</label>
        <p name="sessionGoal" id="sessionGoal" class="form-control">${diaryEntry.sessionGoal}</p>
-    </div>   ​
+    </div>
+
+    <#if diaryEntry.tagsLength gt 0>
+    <div class="form-group">
+      <label for="tags">Tags</label>
+      <br/>
+      <#list diaryEntry.tags as tag>
+
+        <div class="tag">${tag}</div>
+
+      </#list>
+    </div>
+    </#if>     ​
 </div>
 
 
